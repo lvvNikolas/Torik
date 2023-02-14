@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom"
+import './nav_bar.css'
 
-const NavBar = () =>{
+const NavBar = ({setModal}) =>{
 
     return(
         <div className="navBar">
-            <Link>Глвная</Link>
+            <button className="navBarAddAds"
+            onClick={()=>{
+                setModal(true)
+            }}
+            >Подать объявление</button>
         </div>
     )
 }

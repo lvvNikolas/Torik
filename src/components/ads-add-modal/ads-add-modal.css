@@ -1,0 +1,34 @@
+.adsModalContainer{
+    position: fixed;
+    background: #000000b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+.adsModal--hide{
+    z-index: -10000;
+    visibility: hidden;
+    opacity: 0;
+}
+.adsModalContent{
+    padding: 20px;
+    background: #fff;
+}
+.adsModalBody{
+    display: flex;
+    justify-content: space-between;
+}
+.adsModalLink{
+    padding: 20px;
+    border: 1px solid #000;
+    margin: 10px;
+}
