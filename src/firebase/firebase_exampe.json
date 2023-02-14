@@ -11,9 +11,8 @@
         "JobDescription": "some card description here",
         "JobSearch": "Бизнес",
         "Data": "03.02.2023",
-        "Price": "[500], [в день]"
-
-        
+        "Price": "[500], [в день]",
+        "isPicture":"false"
       }
       
     }
