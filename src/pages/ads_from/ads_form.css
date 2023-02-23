@@ -1,0 +1,57 @@
+/* Стили контейнера */
+
+.adsForm{
+    max-width: 1400px;
+    width: 100%;
+    margin:  30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.adsForm ul{
+    list-style: none;
+}
+.adsForm__categories{
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    justify-content: space-between;
+}
+.adsForm__categories-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border: 1px solid black;
+    flex: 0 1 190px;
+    transition: flex 0.3s;
+    margin-right: 15px;
+}
+.adsForm__categories-item:last-of-type{
+    margin-right: 0;
+}
+.categories-item--active{
+    flex: 3 0 290px;
+}
+
+/* Стили вложенных форм */
+
+.adsForm__form{
+    display: flex;
+    flex-direction: column;
+}
+.adsForm__extend-container{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transform-origin: top;
+    overflow: hidden;
+    transition: height 0.3s ease-in;
+}
+.adsForm__extend-container--close{
+   height: 0;
+}
+.adsForm__checkboxes{
+    display: flex;
+    flex-direction: column;
+}

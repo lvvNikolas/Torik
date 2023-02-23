@@ -1,22 +1,20 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import AdsAddModal from './components/ads-add-modal/ads-add-modal';
 import NavBar from './components/nav/nav_bar';
-import JobFormPage from './pages/forms/job-form-page/job_form_page';
-import routesConsts from './constants/routes';
+import {publicRoutes} from './constants/routes';
+import AdsForm from './pages/ads_from/ads_form';
 
 function App() {
   const [modal, setModal] = useState(false)
 
-  const {FORMS} = routesConsts
+  const {FORM} = publicRoutes
 
   return (
     <div className="App">
        <NavBar setModal={setModal}/>
-       <AdsAddModal modal = {modal} setModal = {setModal}/>
        <Routes>
-          <Route path={FORMS.JOB.route} element ={<JobFormPage/>}/>
+          <Route path={FORM.route} element ={<AdsForm/>}/>
        </Routes>
     </div>
   );

@@ -1,0 +1,28 @@
+.navBar{
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display:flex;
+    padding-top: 10px;
+}
+.navBar div{
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+}
+.navBar__navigation{
+    flex-basis: 700px;
+    border: 1px solid #656565;
+}
+.navBar__seachBar{
+    flex-basis: 400px;
+    border: 1px solid #656565;
+}
+.navBar__addAds{
+    max-width: 275px;
+    width: 100%;
+    border: 1px solid #656565;
+}
+.nav_logo{
+    margin-right: auto;
+}

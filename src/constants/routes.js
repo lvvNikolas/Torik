@@ -1,11 +1,6 @@
-export default Object.freeze({
-    LOGIN:{
-
-    },
-    FORMS:{
-        JOB:{
-            name:"Jobform",
-            route:'/job_form'
-        }
+export const publicRoutes = Object.freeze({
+    FORM:{
+        name:"adsForm",
+        route:'/form'
     }
 })
