@@ -22,8 +22,8 @@ function App() {
 
   return (
     <div className="App">
-       {/* <NavBar setModal={setModal}/>
-       <AdsAddModal modal = {modal} setModal = {setModal}/> */}
+       <NavBar setModal={setModal}/>
+    
        <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='jobs' element={<Jobs/>}/>
