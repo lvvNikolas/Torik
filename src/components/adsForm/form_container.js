@@ -1,11 +1,15 @@
 import JobForm from "./job_form"
 import WorkForm from "./job_form"
+import RentForm from "./rent_form"
+import ServicesForm from "./services_form"
 
 
 const FormContainer = ({data}) =>{
 
     const forms = [
         <JobForm/>,
+        <RentForm/>,
+        <ServicesForm/>
     ]
     const idFormHandler = () =>{
         return data.filter(e => e.isActive)[0].id
@@ -13,10 +17,8 @@ const FormContainer = ({data}) =>{
    
     return(
         <div className="adsForm__form-container">
-            <h2 className="adsForm__form-title"></h2>
             <p>Отмеченные "*" пункты обязательны для заполнения</p>
             {
-              
                 data && forms[idFormHandler()]
             }
         </div>

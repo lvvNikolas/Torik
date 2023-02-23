@@ -4,7 +4,6 @@ const CategoriesGroupe = ({data, setData}) => {
     "adsForm__categories-item categories-item--active" : 
     "adsForm__categories-item"
     
-    console.log(data)
     return(
         <ul className="adsForm__categories">
             {

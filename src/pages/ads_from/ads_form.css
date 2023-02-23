@@ -35,10 +35,14 @@
 }
 
 /* Стили вложенных форм */
-
+.adsForm__form-container{
+    max-width: 800px;
+    width: 100%;
+}
 .adsForm__form{
     display: flex;
     flex-direction: column;
+  
 }
 .adsForm__extend-container{
     display: flex;

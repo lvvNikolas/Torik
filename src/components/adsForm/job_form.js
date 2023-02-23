@@ -2,9 +2,10 @@ import { useFormik, Formik, Field } from "formik"
 import React, { useEffect, useRef, useState } from "react"
 import { JOB_CATEGORIES, JOB_REQUIREMENTS, JOB_TIME } from "../../constants/job"
 import { cities } from "../../constants/cities"
+import Pricing from "./pricing"
 
-
-
+//TODO ADD PHOTO DRAG AND DROP FORM
+ //TODO добавить инпуты для ввода линков на телегу ватсап (узнать какие популярные способы связи)
 const JobForm = () => {
     const [extend, setExtend] = useState(false)
     const ref = useRef(null)
@@ -17,11 +18,13 @@ const JobForm = () => {
         jobOwnername: '',
         jobOwnerEmail: '',
         jobOwnerPhone: '',
+        //place for messengers links
         jobAdress: '',
         jobCompanyName: '',
         jobSalary: '',
         jobExtra: [],
         jobTime: '',
+        jobPlan:''
     }
 
     const formSubmit = (values) => {
@@ -139,7 +142,7 @@ const JobForm = () => {
                         </button>
 
                         {
-                           <div className={handleExtendStyle()} ref = {ref}>
+                           <div className={handleExtendStyle()}>
 
                                 <label className="adsForm-label" htmlFor=" jobAdressId">Адрес васкансии</label>
                                 <Field
@@ -177,7 +180,7 @@ const JobForm = () => {
                                 <div role={'group'} aria-labelledby="checkbox-group" className="adsForm__checkboxes">
                                     {
                                         JOB_REQUIREMENTS.map((e, i) => (
-                                            <label>
+                                            <label key={i}>
                                                 <Field key={i} type="checkbox" name="jobExtra" value={e.id} />
                                                 {e.title}
                                             </label>
@@ -197,6 +200,8 @@ const JobForm = () => {
                                 </div>
                             </div>
                         }
+
+                        <Pricing adsType={"JOB"}/>
 
                         <button type="submit">Отправить</button>
                     </form>

@@ -17,19 +17,18 @@ import AdsForm from './pages/ads_from/ads_form';
 
 function App() {
 
-
-  const {FORM} = publicRoutes
+  const {FORM,MAIN,JOBS,ESTATE,SERVICES,TRUCKS} = publicRoutes
 
   return (
     <div className="App">
        <NavBar/>
     
        <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='jobs' element={<Jobs/>}/>
-        <Route path='realEstate' element={<RealEstate/>}/>
-        <Route path='services' element={<Services/>}/>
-        <Route path='trucks' element={<Trucks/>}/>
+        <Route path={MAIN.route} element={<Home/>}/>
+        <Route path={JOBS.route}  element={<Jobs/>}/>
+        <Route path={ESTATE.route}  element={<RealEstate/>}/>
+        <Route path={SERVICES.route}  element={<Services/>}/>
+        <Route path={TRUCKS.route}  element={<Trucks/>}/>
         <Route path='freshAds' element={<FreshAds/>}/>
         <Route path='topServices' element={<TopServices/>}/>
         <Route path='newJobs' element={<NewJobs/>}/>
