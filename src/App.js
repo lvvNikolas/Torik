@@ -10,19 +10,19 @@ import FreshAds from './pages/freshAds/freshAds';
 import TopServices from './pages/topServices/topServices';
 import NewJobs from './pages/newJobs/newJobs';
 import TopRealEstate from './pages/topRealEstate/topRealEstate';
-// import AdsAddModal from './components/ads-add-modal/ads-add-modal';
-// import NavBar from './components/nav/nav_bar';
-// import JobFormPage from './pages/forms/job-form-page/job_form_page';
-// import routesConsts from './constants/routes';
+import NavBar from './components/nav/nav_bar';
+import { publicRoutes } from './constants/routes';
+import AdsForm from './pages/ads_from/ads_form';
+
 
 function App() {
-  // const [modal, setModal] = useState(false)
 
-  // const {FORMS} = routesConsts
+
+  const {FORM} = publicRoutes
 
   return (
     <div className="App">
-       <NavBar setModal={setModal}/>
+       <NavBar/>
     
        <Routes>
         <Route path='/' element={<Home/>}/>
@@ -34,7 +34,7 @@ function App() {
         <Route path='topServices' element={<TopServices/>}/>
         <Route path='newJobs' element={<NewJobs/>}/>
         <Route path='topRealEstate' element={<TopRealEstate/>}/>
-          {/* <Route path={FORMS.JOB.route} element ={<JobFormPage/>}/> */}
+        <Route path={FORM.route} element ={<AdsForm/>}/>
        </Routes>
     </div>
   );
