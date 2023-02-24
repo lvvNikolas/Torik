@@ -8,6 +8,7 @@ const Pricing = ({adsType}) =>{
         name:'',
         values:[]
     })
+    const [currentPlan, setCurrentPlan] = useState('')
      
     useEffect(()=>{
         if(adsType === "JOB"){
@@ -30,7 +31,9 @@ const Pricing = ({adsType}) =>{
         }
     },[])
  
-
+    const handlePlanPrice = (price) =>{
+        setCurrentPlan(price)
+    }
     return(
         <div className="adsForm__pricing">
             <h3>Для продолжения необходимо выбрать тариф для публикаций</h3>
@@ -39,11 +42,15 @@ const Pricing = ({adsType}) =>{
             <div role={'group'} aria-labelledby="checkbox-group" className="adsForm__plans">
                 {
                     plans.values.map((e, i)=>  
-                    <label key={i}>
-                        <Field key={i} type="radio" name={plans.name} value={e.id} checked />
+                    <label key={i} onClick = {()=>handlePlanPrice(e.price)}>
+                        <Field key={i} type="radio" name={plans.name} value={e.id}/>
                     {e.title}
                 </label>)
                 }
+            </div>
+            <div className="adsForm__totalPrice">
+                Сумма к оплате:
+                <span>{currentPlan}</span>
             </div>
         </div>
     )
