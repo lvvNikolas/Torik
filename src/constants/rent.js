@@ -8,8 +8,8 @@ export const RENT_CATEGORIES = [
         title: 'Комната'
     },
     {
-        id:'STUDIO',
-        title: 'Студия'
+        id:'КВАРТИРА',
+        title: 'Квартира'
     },
     {
         id:'APPARTMENTS',

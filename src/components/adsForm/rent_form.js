@@ -152,6 +152,7 @@ const RentForm = () => {
                     </div>
 
                     <Pricing adsType={"RENT"}/>
+                    
                     <button type="submit">Отправить</button>
                 </form>
             }

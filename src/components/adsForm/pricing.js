@@ -31,8 +31,6 @@ const Pricing = ({adsType}) =>{
     },[])
  
 
-    console.log(plans)
-
     return(
         <div className="adsForm__pricing">
             <h3>Для продолжения необходимо выбрать тариф для публикаций</h3>
