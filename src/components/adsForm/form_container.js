@@ -17,7 +17,7 @@ const FormContainer = ({data}) =>{
    
     return(
         <div className="adsForm__form-container">
-            <p>Отмеченные "*" пункты обязательны для заполнения</p>
+            <p className="adsForm__form-note">Отмеченные "*" пункты обязательны для заполнения</p>
             {
                 data && forms[idFormHandler()]
             }

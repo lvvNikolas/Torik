@@ -137,7 +137,7 @@ const JobForm = () => {
                         />
 
                         {/* Доп форма */}
-                        <button type="button" onClick={handleExtend}>
+                        <button type="button" onClick={handleExtend} className = {'adsForm__more-btn'}>
                             {handleExtendText()}
                         </button>
 
@@ -180,9 +180,11 @@ const JobForm = () => {
                                 <div role={'group'} aria-labelledby="checkbox-group" className="adsForm__checkboxes">
                                     {
                                         JOB_REQUIREMENTS.map((e, i) => (
-                                            <label key={i}>
+                                            <label key={i} className = {'adsForm__checkbox-label'}>
+                                                
                                                 <Field key={i} type="checkbox" name="jobExtra" value={e.id} />
-                                                {e.title}
+                                                <div className="adsForm__checkboxes-custom_chbx"></div>
+                                                <span>{e.title}</span>
                                             </label>
                                         ))
                                     }

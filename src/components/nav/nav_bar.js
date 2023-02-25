@@ -29,6 +29,7 @@ const NavBar = () =>{
     }
    
     const buttonSearchHandler = () =>{
+        
         return isSearch && window.innerWidth < 550 ?
         'navBar__addAds nav__part searchFocusBtnSize':
         'navBar__addAds nav__part'
@@ -69,13 +70,14 @@ const NavBar = () =>{
             <div className="navBar__right">
                 <div className={"navBar__seachBar nav__part"}>
                     <input 
+                    placeholder="Поиск по сайту"
                     onFocus={()=>setisSearch(true)}
                     onBlur ={()=>setisSearch(false)}
                     />
                 </div>
-                <div className={buttonSearchHandler()}>
-                    <Link to={FORM.route} className="navBarAddAds">Подать объявление</Link>
-                </div>
+                <Link to={FORM.route}  className={`${buttonSearchHandler()} active_btn`}>
+                    Подать объявление
+                </Link>
             </div>
           
            

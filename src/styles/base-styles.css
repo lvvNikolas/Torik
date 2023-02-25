@@ -1,0 +1,117 @@
+/* ПЕРЕМЕННЫЕ ----------------------------- */
+
+:root{
+    /* colors */
+    --card_bg:#F6F6F6;
+    --input_bg:#F4F7FA;
+    --link_color:#4F3BFF;
+    --btn_bg:#517DED;
+    --active_color:#517DED;
+    --btn_color:#fff;
+    --main_bg:#fff;
+    --money_color:#358489;
+    --border_color:#869DB5;
+    --innactive_text_color:#869DB5;
+    --location_color:#4982B7;
+    --hashtag_color:#626262;
+    --black_accent:#2D3038;
+    --main_font_color:#334454;
+    --reverse_font_color:#fff;
+     /* опционально (в разработке)
+        цвет категорий( для объявлений, услуг и типа недвижки)
+     */
+    --category_color:#D17810;
+    
+
+    /* paddings */
+    --noimage_card_long_padding: 30px;
+    --noimage_card_long_padding_mobile:20px;
+    --image_card_long_padding: 30px 30px 30px 25px;
+    --image_card_long_padding_mobile: 20px;
+    --card_short_padding:20px;
+    --togglers_horizontal_padding:0 30px;
+
+     /* margins */
+    --section_margin_bottom: 90px;
+    --title_margin_bottom:45px;
+    --title_margin_bottom_mobile:30px;
+    --card_text_margin_regular:20px;
+    --card_text_margin_small:15px;
+
+    /* radius */
+    --radius:20px;
+
+    /* heights */
+    --btn_long_width:270px;
+    --btn_short_width:170px;
+    --active-el_height:70px;
+    --active-el_height_mobile:50px;
+
+    /*fonts sizes*/
+    --main_title_size:3.2rem;
+    --page_title_size:2.4rem;
+    --card_title_size:1.6rem;
+    --card_title_small_size:1rem;
+    --text_size:1rem;
+    --text_small_zise:0.8rem;
+
+     /*fonts weights*/
+     --title_weight:800;
+     --text_weight:300;
+
+    /*fonts styles*/
+    --title_style:italic;
+    --text_style:normal;
+ 
+    /*transition time*/
+    --transtion_time:0.3s;
+    --transtion_time--long:0.6s
+}
+
+
+/* ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ----------------------------- */
+.section__container{
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.main__title{
+    font-weight: 800;
+    font-style: italic;
+    font-size: 3.2rem;
+}
+.section__title{
+    font-weight: 800;
+    font-style: italic;
+    font-size: 2.4rem;
+}
+.card__title--big{
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+.card__title--small{
+    font-weight: 800;
+    font-size: 1rem;
+}
+.text{
+    font-weight: 300;
+    font-size: 1rem;
+}
+.text--small{
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.active_btn{
+    color: var(--btn_color);
+    background: var(--btn_bg);
+    transition: letter-spacing var(--transtion_time);
+    text-decoration: none;
+}
+
+
+/*HOVER И ACTIVE ЭФФЕКТЫ ----------------------------- */
+.active_btn:hover{
+    letter-spacing:0.1rem
+}

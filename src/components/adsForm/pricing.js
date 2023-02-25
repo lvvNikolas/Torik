@@ -34,6 +34,13 @@ const Pricing = ({adsType}) =>{
     const handlePlanPrice = (price) =>{
         setCurrentPlan(price)
     }
+
+    const planAdvantagesTemplate = (avlb,unavlb) =>{
+        const avlbTemplate = avlb.map((e,i)=> <p key={i}>{e}</p>)
+        const unavlbTemplate = unavlb.map((e,i)=><p key={i} style ={{opacity:0.3}}>{e}</p>)
+        return avlbTemplate.concat(unavlbTemplate)
+    }
+    
     return(
         <div className="adsForm__pricing">
             <h3>Для продолжения необходимо выбрать тариф для публикаций</h3>
@@ -41,11 +48,16 @@ const Pricing = ({adsType}) =>{
 
             <div role={'group'} aria-labelledby="checkbox-group" className="adsForm__plans">
                 {
-                    plans.values.map((e, i)=>  
-                    <label key={i} onClick = {()=>handlePlanPrice(e.price)}>
-                        <Field key={i} type="radio" name={plans.name} value={e.id}/>
-                    {e.title}
-                </label>)
+                    plans.values.map(({id,price,avalible,unavalible,title,bonus}, i)=> 
+                    <label key={i} onClick = {()=>handlePlanPrice(price)}>
+                        <Field key={i} type="radio" name={plans.name} value={id}/>
+                    <h3>{title}</h3>
+                    <p>{bonus}</p>
+                    {
+                        planAdvantagesTemplate(avalible, unavalible)
+                    }
+                    
+                    </label>)
                 }
             </div>
             <div className="adsForm__totalPrice">

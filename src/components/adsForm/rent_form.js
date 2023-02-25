@@ -134,7 +134,7 @@ const RentForm = () => {
                     />
                    
                     {/* Доп форма */}
-                    <button type="button" onClick={handleExtend}>
+                    <button type="button" onClick={handleExtend} className = {'adsForm__more-btn'}>
                         {handleExtendText()}
                     </button>
                     

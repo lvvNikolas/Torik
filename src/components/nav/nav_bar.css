@@ -3,16 +3,22 @@
     width: 100%;
     margin: 0 auto;
     display:flex;
-    padding-top: 10px;
+    padding: 10px;
+    padding-bottom: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 .nav__part{
     border-radius: 20px;
     padding: 20px;
-    display: flex;
+    display: flex;  
+    align-items: center;
 }
 .navBar__navigation{
     flex-basis: 700px;
-    border: 1px solid #656565;
+    border: 1px solid var(--border_color);
+    background: var(--main_bg);
     flex-grow: 1;
     justify-content: space-between;
     transition: flex 0.3s;
@@ -20,25 +26,71 @@
 .navBar__navigation-container{
     display: flex;
 }
+.navigation__item{
+    color: var(--main_font_color);
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: var(--text_zise);
+    font-weight: var(--text_weight);
+}
+.navigation__item:hover{
+    color: var(--active_color);
+}
 .navBar__right{
     flex-basis: 675px;
     display: flex;
     flex-grow: 1;
 }
 .navBar__seachBar{
-    width: 300px;
+    /* max-width: 300px; */
+    width: 100%;
     flex-grow: 1;
-    border: 1px solid #656565;
+    background: var(--black_accent);
     margin-right: 10px;
     margin-left: 10px;
     transition: width 0.3s;
+    display: flex;
+    padding: 0 30px;
+    position: relative;
+    align-items: center;
+}
+.navBar__seachBar::before{
+    content: '🔎';
+}
+.navBar__seachBar input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--black_accent);
+    width: 100%;
+    padding: 10px;
+    color: var(--reverse_font_color);
+    transition: border var(--transtion_time);
+}
+.navBar__seachBar input::placeholder{
+    color:var(--reverse_font_color);
+    opacity: 0.7;
+}
+.navBar__seachBar input:focus{
+    outline: none;
+    border-bottom: 1px solid var(--reverse_font_color);
 }
 .navBar__addAds{
-    width: 275px;
-    border: 1px solid #656565;
-    transition: width 0.3s;
+    width: var(--btn_long_width);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    transition: width var(--transtion_time), letter-spacing var(--transtion_time);
     white-space:nowrap;
+    background-color: var(--btn_bg);  
+    font-size: var(--text_zise);
+    height: var(--active-el_height);
+    font-weight: var(--text_weight);
 }
+.navBar__addAds:hover{
+    width: 310px;
+}
+
 .nav_logo{
     margin-right: auto;
 }
@@ -78,7 +130,6 @@
     flex-grow: 0;
     padding: 20px 0;
     overflow: hidden;
-   
 }
 .searchFocusNavigationSize{
     width: 0;
@@ -86,12 +137,15 @@
     padding: 0;
     overflow: hidden;
 }
+
 @media (max-width:950px) {
     .navBar__right{
-        width: 100%;
+        width: calc(100% - 20px);
         display: flex;
         position: fixed;
         bottom: 10px;
+        left: 10px;
+        z-index: 100;
     }
     .navBar__seachBar{
         margin-left:0px;
