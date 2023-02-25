@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { publicRoutes } from "../../constants/routes"
 import './nav_bar.css'
 
@@ -50,20 +50,25 @@ const NavBar = () =>{
                     <span></span>
                 </button>
                 <div className={handleNavClass()}>
-                    <Link className="navigation__item"  to={MAIN.route} 
-                    onClick = {()=>handleBurger('close')}>Главная</Link>
+                    <NavLink className="navigation__item"  to={MAIN.route} 
+                    style = {({isActive}) => isActive ? {color:'#517DED'} : null}
+                    onClick = {()=>handleBurger('close')}>Главная</NavLink>
 
-                    <Link className="navigation__item"  to={JOBS.route} 
-                    onClick = {()=>handleBurger('close')}>Работа</Link>
+                    <NavLink className="navigation__item"  to={JOBS.route} 
+                     style = {({isActive}) => isActive ? {color:'#517DED'} : null}
+                    onClick = {()=>handleBurger('close')}>Работа</NavLink>
 
-                    <Link className="navigation__item"  to={ESTATE.route} 
-                    onClick = {()=>handleBurger('close')}>Жилье</Link>
+                    <NavLink className="navigation__item"  to={ESTATE.route} 
+                     style = {({isActive}) => isActive ? {color:'#517DED'} : null}
+                    onClick = {()=>handleBurger('close')}>Жилье</NavLink>
 
-                    <Link className="navigation__item"  to={SERVICES.route} 
-                    onClick = {()=>handleBurger('close')}>Услуги</Link>
+                    <NavLink className="navigation__item"  to={SERVICES.route} 
+                     style = {({isActive}) => isActive ? {color:'#517DED'} : null}
+                    onClick = {()=>handleBurger('close')}>Услуги</NavLink>
 
-                    <Link className="navigation__item"  to={TRUCKS.route} 
-                    onClick = {()=>handleBurger('close')}>Траки</Link>
+                    <NavLink className="navigation__item"  to={TRUCKS.route} 
+                     style = {({isActive}) => isActive ? {color:'#517DED'} : null}
+                    onClick = {()=>handleBurger('close')}>Траки</NavLink>
                 </div> 
             </div>
 
