@@ -8,6 +8,7 @@ const Pricing = ({adsType}) =>{
         name:'',
         values:[]
     })
+
     const [currentPlan, setCurrentPlan] = useState('')
      
     useEffect(()=>{
@@ -36,8 +37,16 @@ const Pricing = ({adsType}) =>{
     }
 
     const planAdvantagesTemplate = (avlb,unavlb) =>{
-        const avlbTemplate = avlb.map((e,i)=> <p key={i}>{e}</p>)
-        const unavlbTemplate = unavlb.map((e,i)=><p key={i} style ={{opacity:0.3}}>{e}</p>)
+        // Ключ нужен для решения конфликта одинаковых ключей из массивов
+        let key = 0
+        const avlbTemplate = avlb.map((e)=> {
+            key += 1
+            return  <p key={key}>{e}</p>
+        })
+        const unavlbTemplate = unavlb.map((e,i)=>{
+            key += 1
+            return <p key={key} style ={{opacity:0.3}}>{e}</p>
+        })
         return avlbTemplate.concat(unavlbTemplate)
     }
     
@@ -48,16 +57,17 @@ const Pricing = ({adsType}) =>{
 
             <div role={'group'} aria-labelledby="checkbox-group" className="adsForm__plans">
                 {
-                    plans.values.map(({id,price,avalible,unavalible,title,bonus}, i)=> 
-                    <label key={i} onClick = {()=>handlePlanPrice(price)}>
-                        <Field key={i} type="radio" name={plans.name} value={id}/>
-                    <h3>{title}</h3>
-                    <p>{bonus}</p>
-                    {
-                        planAdvantagesTemplate(avalible, unavalible)
-                    }
+                    plans.values.map(({id,price,avalible,unavalible,title,bonus}, i)=> {
+                    return <label key={i} onClick = {()=>handlePlanPrice(price)}>
+                        <Field type="radio" name={plans.name} value={id}/>
+                        <h3>{title}</h3>
+                        <p>{bonus}</p>
+                        {
+                            planAdvantagesTemplate(avalible, unavalible)
+                        }
                     
-                    </label>)
+                    </label>
+                    })
                 }
             </div>
             <div className="adsForm__totalPrice">

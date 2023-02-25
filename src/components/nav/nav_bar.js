@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useMatch } from "react-router-dom"
 import { publicRoutes } from "../../constants/routes"
 import './nav_bar.css'
 
 const NavBar = () =>{
+
     
     const {FORM,MAIN,JOBS,ESTATE,SERVICES,TRUCKS} = publicRoutes
     const [isOpen, setIsOpen] = useState(false)
