@@ -4,3 +4,11 @@
     color: rgb(223, 35, 91);
     margin-top: 300px;
 }
+
+.container{
+    /* margin-top: 38px; */
+    width: 1440px;
+    margin: 0 auto;
+    /* text-align: center; */
+    border: 1px solid salmon;
+}
