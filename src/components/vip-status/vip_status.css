@@ -1,0 +1,42 @@
+.vip-sign, .supervip-sign{
+    max-width: 170px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: var(--radius);
+    padding: 8px 0;
+    background: var(--vip_bg);
+    position: relative;
+}   
+.vip-sign__title{
+    color: var(--vip_color);
+    font-weight: var( --title_weight);
+}
+.supervip-sign{
+    background: var(--super-vip_bg);
+}
+.supervip-sign__title{
+    color: var( --super-vip_color);
+    font-weight: var( --title_weight);
+}
+.status-sign__details-link{
+    position: absolute;
+    width: fit-content;
+    text-align: center;
+    left: 20px;
+    bottom: 0;
+    transform: translateY(90%);
+    font-size: 0.8rem;
+    color: var(--link_color);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px #515b6612;
+    padding: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: z-index 0.2s, opacity 0.2s;
+}
+.status-sign:hover .status-sign__details-link{
+    z-index: 1000;
+    opacity: 1;
+}

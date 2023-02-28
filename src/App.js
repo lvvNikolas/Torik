@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import './App.css';
 import Home from './pages/home/home';
 import Jobs from './pages/jobs/jobs';
@@ -13,6 +13,8 @@ import TopRealEstate from './pages/topRealEstate/topRealEstate';
 import NavBar from './components/nav/nav_bar';
 import { publicRoutes } from './constants/routes';
 import AdsForm from './pages/ads_from/ads_form';
+import Details from './pages/details/details';
+import NotFound from './pages/notFound/not_found';
 
 
 function App() {
@@ -25,14 +27,11 @@ function App() {
     
        <Routes>
         <Route path={MAIN.route} element={<Home/>}/>
-        <Route path={JOBS.route}  element={<Jobs/>}/>
+        <Route path={`${JOBS.route}/*`}  element={<Jobs/>}/>
         <Route path={ESTATE.route}  element={<RealEstate/>}/>
         <Route path={SERVICES.route}  element={<Services/>}/>
         <Route path={TRUCKS.route}  element={<Trucks/>}/>
-        <Route path='freshAds' element={<FreshAds/>}/>
-        <Route path='topServices' element={<TopServices/>}/>
-        <Route path='newJobs' element={<NewJobs/>}/>
-        <Route path='topRealEstate' element={<TopRealEstate/>}/>
+        <Route path='*' element = {<NotFound/>}/>
         <Route path={FORM.route} element ={<AdsForm/>}/>
        </Routes>
     </div>

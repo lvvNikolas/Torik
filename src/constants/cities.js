@@ -1,4 +1,8 @@
-export const cities = [
+export const CITIES = [
+    {
+        id:"USA",
+        title:"Вся США"
+    },
     {
         id:"LA",
         title:"Лос-Анжелес"

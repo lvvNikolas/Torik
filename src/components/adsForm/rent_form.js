@@ -153,7 +153,7 @@ const RentForm = () => {
 
                     <Pricing adsType={"RENT"}/>
                     
-                    <button type="submit">Отправить</button>
+                    <button type="submit" className="adsForm_submit active_btn">Отправить</button>
                 </form>
             }
         </Formik>

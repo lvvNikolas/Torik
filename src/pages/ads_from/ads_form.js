@@ -37,7 +37,7 @@ const AdsForm = () => {
     }
     return(
         <div className="adsForm">
-            <button type="button" className = "adsForm__back" onClick={handleReturn}>Назад</button>
+            <button type="button" className = "adsForm__back back__btn active_link" onClick={handleReturn}>Назад</button>
             <h2 className = "adsForm__form-title">Добавить объявление</h2>
             <h3 className = "adsForm__form-sub-title">Тип объявления</h3>
             <CategoriesGroupe data={categories} setData = {setCategories}/>
