@@ -39,7 +39,6 @@ const NavBar = () =>{
 
     }
     
-
     return(
         <div className="navBar">
             <div className={"navBar__navigation nav__part"}>
