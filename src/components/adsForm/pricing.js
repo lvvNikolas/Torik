@@ -2,6 +2,7 @@ import { Field } from "formik"
 import { useEffect, useState } from "react"
 import { PricingPlansJob, PricingPlansRent, PricingPlansService } from "../../constants/pricing"
 
+// TODO добавить аутлайн в карточки, добавить элементам списка украшений, добавить бордер снизу тайтла первой карточке
 const Pricing = ({adsType}) =>{
      
     const [plans, setPlans] = useState({
