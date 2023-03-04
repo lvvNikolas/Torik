@@ -107,5 +107,57 @@ export const placeHolderData = {
 
       ]
 
+    },
+    ServicesPage:{
+      Services:[
+        {
+          Id:"id1",
+          ServicesTitle: "STELLAR MORTGAGE. Эксперт по Личному Ипотечному Кредитованию!",
+          OwnerName: "Виталик",
+          Category:"Адвокаты",
+          CompanyName: "STELLAR MORTGAGE",
+          PhoneNumber: "5623309823",
+          SocialLink: "[facebook],[instagram],[web]",
+          City: "San-Diego",
+          AdsStatus: 'VIP',
+          ServicesDescription: "Неважно, покупаете ли вы, продаете, рефинансируете или строите дом своей мечты; важно работать с опытной и знающей командой.",
+          ServicesSearch: "Ипотека",
+          Date: "03.02.2023",
+          Price: "1000$/ неделя",
+          isPicture:"false" 
+        },
+        {
+          Id:"id2",
+          ServicesTitle: "STELLAR MORTGAGE. Эксперт по Личному Ипотечному Кредитованию!",
+          OwnerName: "Виталик",
+          Category:"Адвокаты",
+          CompanyName: "STELLAR MORTGAGE",
+          PhoneNumber: "5623309823",
+          SocialLink: "[facebook],[instagram],[web]",
+          City: "San-Diego",
+          AdsStatus: 'VIP',
+          ServicesDescription: "Неважно, покупаете ли вы, продаете, рефинансируете или строите дом своей мечты; важно работать с опытной и знающей командой.",
+          ServicesSearch: "Ипотека",
+          Date: "03.02.2023",
+          Price: "1000$/ неделя",
+          isPicture:"false" 
+        },
+        {
+          Id:"id3",
+          ServicesTitle: "STELLAR MORTGAGE. Эксперт по Личному Ипотечному Кредитованию!",
+          OwnerName: "Виталик",
+          Category:"Адвокаты",
+          CompanyName: "STELLAR MORTGAGE",
+          PhoneNumber: "5623309823",
+          SocialLink: "[facebook],[instagram],[web]",
+          City: "San-Diego",
+          AdsStatus: 'VIP',
+          ServicesDescription: "Неважно, покупаете ли вы, продаете, рефинансируете или строите дом своей мечты; важно работать с опытной и знающей командой.",
+          ServicesSearch: "Ипотека",
+          Date: "03.02.2023",
+          Price: "1000$/ неделя",
+          isPicture:"false" 
+        },
+      ]
     }
   }

@@ -19,7 +19,7 @@ const Trucks = () => {
         <button type='button' className='TrucksPage__back back__btn active_link' onClick={handleReturn}>Назад</button>
         <Routes>
             <Route index element = {<TrucksList/>}/>
-            <Route path=':jobId' element = {<Details direction={publicRoutes.TRUCKS.route}/>}/>
+            <Route path=':trucksId' element = {<Details direction={publicRoutes.TRUCKS.route}/>}/>
         </Routes>
     </div>
   )
