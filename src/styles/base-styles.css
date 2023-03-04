@@ -2,7 +2,7 @@
 
 :root{
     /* colors */
-    --card_bg:#F6F6F6;
+    --card_bg:#F4F7FA;
     --input_bg:#F4F7FA;
     --link_color:#4F3BFF;
     --btn_bg:#517DED;
@@ -17,12 +17,17 @@
     --black_accent:#2D3038;
     --main_font_color:#334454;
     --reverse_font_color:#fff;
+    --super-vip_bg:#424166;
+    --vip_bg:#585780;
+    --super-vip_color:#FFB156;
+    --vip_color:#C6B8FF;
      /* опционально (в разработке)
         цвет категорий( для объявлений, услуг и типа недвижки)
      */
     --category_color:#D17810;
+    /* hovers */
+    --active_color--hover:#3862cd;
     
-
     /* paddings */
     --noimage_card_long_padding: 30px;
     --noimage_card_long_padding_mobile:20px;
@@ -30,6 +35,7 @@
     --image_card_long_padding_mobile: 20px;
     --card_short_padding:20px;
     --togglers_horizontal_padding:0 30px;
+    --container_horizontal_padding:10px;
 
      /* margins */
     --section_margin_bottom: 90px;
@@ -109,9 +115,28 @@
     transition: letter-spacing var(--transtion_time);
     text-decoration: none;
 }
+.active_link{
+    transition: letter-spacing var(--transtion_time);
+}
 
+.back__btn{
+    color: var(--link_color);
+    border: 1px solid var(--link_color);
+    padding: 10px 30px;
+    background: none;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    transition: letter-spacing 0.3s;
+    text-decoration: underline;
+}
 
 /*HOVER И ACTIVE ЭФФЕКТЫ ----------------------------- */
 .active_btn:hover{
-    letter-spacing:0.1rem
+    letter-spacing:0.1rem;
+    background: var(--active_color--hover);
 }
+
+.active_link:hover{
+    letter-spacing:0.1rem;
+}
+

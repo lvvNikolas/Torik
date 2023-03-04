@@ -122,7 +122,7 @@ const ServicesForm = () =>{
 
                     <Pricing adsType={"SERVICES"}/>
                     
-                    <button type="submit">Отправить</button>
+                    <button type="submit" className="adsForm_submit active_btn">Отправить</button>
             </form>
         }
     </Formik>

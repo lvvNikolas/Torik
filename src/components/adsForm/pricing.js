@@ -32,8 +32,11 @@ const Pricing = ({adsType}) =>{
         }
     },[])
  
-    const handlePlanPrice = (price) =>{
-        setCurrentPlan(price)
+    const handlePlanPrice = (id,price) =>{
+        setCurrentPlan({
+            id:id,
+            price:price
+        })
     }
 
     const planAdvantagesTemplate = (avlb,unavlb) =>{
@@ -50,6 +53,12 @@ const Pricing = ({adsType}) =>{
         return avlbTemplate.concat(unavlbTemplate)
     }
     
+    const classNameHandler = (id) =>{
+        return id === currentPlan?.id ?
+         'adsForm__plan-item adsForm__plan-item--selected'
+         : 'adsForm__plan-item'
+    }
+    
     return(
         <div className="adsForm__pricing">
             <h3>Для продолжения необходимо выбрать тариф для публикаций</h3>
@@ -58,21 +67,22 @@ const Pricing = ({adsType}) =>{
             <div role={'group'} aria-labelledby="checkbox-group" className="adsForm__plans">
                 {
                     plans.values.map(({id,price,avalible,unavalible,title,bonus}, i)=> {
-                    return <label key={i} onClick = {()=>handlePlanPrice(price)}>
+                    return <label key={i} onClick = {()=>{handlePlanPrice(i,price)}} className = {classNameHandler(i)}>
                         <Field type="radio" name={plans.name} value={id}/>
-                        <h3>{title}</h3>
-                        <p>{bonus}</p>
-                        {
-                            planAdvantagesTemplate(avalible, unavalible)
-                        }
-                    
+                        <h3 className="adsForm__plan-title">{title}</h3>
+                        <p className="adsForm__plan-bonus">{bonus}</p>
+                        <div className="adsForm__plan-list">
+                            {
+                                planAdvantagesTemplate(avalible, unavalible)
+                            }
+                        </div>
                     </label>
                     })
                 }
             </div>
             <div className="adsForm__totalPrice">
                 Сумма к оплате:
-                <span>{currentPlan}</span>
+                <span> {currentPlan.price}</span>
             </div>
         </div>
     )

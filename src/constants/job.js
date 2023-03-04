@@ -1,5 +1,9 @@
 export const JOB_CATEGORIES = [
     {
+        id:"ALL",
+        title:"Все вакансии"
+    },
+    {
         id:"SELLERS",
         title:'Продавцы и работа с кассой'
     },

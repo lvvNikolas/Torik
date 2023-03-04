@@ -1,7 +1,7 @@
 import { useFormik, Formik, Field } from "formik"
 import React, { useEffect, useRef, useState } from "react"
 import { JOB_CATEGORIES, JOB_REQUIREMENTS, JOB_TIME } from "../../constants/job"
-import { cities } from "../../constants/cities"
+import { CITIES } from "../../constants/cities"
 import Pricing from "./pricing"
 
 //TODO ADD PHOTO DRAG AND DROP FORM
@@ -13,7 +13,7 @@ const JobForm = () => {
     const initialValues = {
         jobCategory: JOB_CATEGORIES[0].id,
         jobTitle: '',
-        jobLocation: cities[0].id,
+        jobLocation: CITIES[0].id,
         jobDescription: '',
         jobOwnername: '',
         jobOwnerEmail: '',
@@ -87,7 +87,7 @@ const JobForm = () => {
                             onChange={handleChange}
                             value={values.jobLocation}>
                             {
-                                cities.map((e, i) => <option
+                                CITIES.map((e, i) => <option
                                     key={i}
                                     value={e.id}
                                 >{e.title}</option>)
@@ -205,7 +205,7 @@ const JobForm = () => {
 
                         <Pricing adsType={"JOB"}/>
 
-                        <button type="submit">Отправить</button>
+                        <button type="submit" className="adsForm_submit active_btn">Отправить</button>
                     </form>
             }
         </Formik>
