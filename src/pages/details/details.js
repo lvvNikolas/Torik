@@ -7,8 +7,9 @@ import { publicRoutes } from "../../constants/routes"
 const Details = ({direction}) =>{
     const {JOBS,ESTATE,SERVICES,TRUCKS} = publicRoutes
     const {jobId} = useParams()
+    const {trucksId} = useParams()
 
-    console.log(direction, jobId)
+    console.log(direction, jobId, trucksId)
     if(direction === JOBS.route){
         return <JobDetails/>
     }
@@ -19,7 +20,7 @@ const Details = ({direction}) =>{
         return <div>THIS IS JOB DETAILS</div>
     }
     if(direction === TRUCKS.route){
-        return <div>THIS IS JOB DETAILS</div>
+        return <div>THIS IS Trucks DETAILS</div>
     }
     return <Navigate to={'/*'}/>
 }
