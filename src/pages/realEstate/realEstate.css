@@ -1,6 +1,149 @@
-.realEstate{
-    font-size: 50px;
-    text-align: center;
-    color: rgb(19, 76, 99);
-    margin-top: 300px;
+.estatePage{
+    padding: 0 var(--container_horizontal_padding);
+    max-width: 1400px;
+    width: 100%;
+    margin: 30px auto;
+}
+.estatePage__back{
+    margin-bottom: var(--card_short_padding);
+}
+.estatePage__title{
+    font-size: var(--page_title_size);
+    margin-bottom: var(--title_margin_bottom);
+    font-weight: var(--title_weight);
+    font-style: var(--title_style);
+}
+.estatePage__body{
+    display: flex;
+}
+.estatePage__filters{
+    max-width: 270px;
+    width: 100%;
+    flex-grow: 0;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+.estatePage__filters-btn{
+    height: 70px;
+    border: none;
+    width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: 15px;
+    font-size: var(--text_size);
+}
+.estatePage__ads{
+    flex-basis: 270px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    height: 300px;
+    background: #c9c9c9;
+    position: sticky;
+    top: 100px;
+}
+.estatePage__list {
+    flex-grow: 1;
+    flex-basis: 800px;
+    margin: 0 20px;
+}
+.estatePage__card{
+    background:var(--card_bg);
+    border-radius: var(--radius); 
+    margin-bottom: var(--card_text_margin_regular);
+    color: var(--main_font_color);
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+}
+.estatePage__card-text-content{
+    padding: var(--image_card_long_padding);
+}
+.estatePage__card-img{
+    max-width: 270px;
+    border-radius: var(--radius) 0 0 var(--radius);
+    object-fit: cover;
+}
+.estatePage__card:hover .estatePage__card-title{
+    color: var(--active_color);
+}
+/* .estatePage__card:hover {
+    transform: translateX(10px);
+} */
+.estatePage__card-title{
+    font-weight: var(--title_weight);
+    font-size: var(--card_title_size);
+    transition: color 0.1s;
+}
+.estatePage__card-price{
+    font-size: var(--card_title_size);
+    color: var(--money_color);
+    margin: var(--card_text_margin_regular) 0;
+    font-weight: var(--title_weight);
+}
+.estatePage__card-desc{
+    margin-bottom: var(--card_text_margin_regular);
+    font-weight: var(--text_weight);
+}
+.estatePage__card-extra{
+    display: flex;
+    align-items: center;
+    font-weight: var(--text_weight);
+}
+.estatePage__card-date{
+    color: var(--hashtag_color);
+    font-weight: var(--text_weight);
+}
+.estatePage__card-category{
+    color: var(--category_color);
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+@media (max-width:1400px) {
+    .estatePage__body{
+        flex-wrap: wrap;
+    }
+    .estatePage__filters{
+        width: 100%;
+        max-width: 100%;
+        flex-direction: row;
+        display: flex;
+        position: static;
+        
+    }
+    .estatePage__filters-btn{
+        max-width: 270px;
+        margin-right: auto;
+    }
+    .estatePage__list{
+        flex-basis: calc(100% - 240px);
+        flex-grow: 0;
+        margin: 0;
+        margin-right: 20px;
+    }
+    .estatePage__ads{
+        flex-basis: 190px;
+        flex-grow: 1;
+    }
+}
+@media (max-width:1000px) {
+    .estatePage__filters{
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .estatePage__ads{
+        display: none;
+    }
+   .estatePage__list{
+    flex-basis: 100%;
+    margin-right: 0;
+   }
+}
+@media (max-width:700px) {
+    .estatePage__filters{
+        flex-direction: column;
+    }
+    .estatePage__filters-btn{
+        max-width: 100%;
+    }
 }

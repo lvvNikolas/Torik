@@ -11,7 +11,7 @@ const ListFilterToggler = ({state, setState}) => {
         left:0,
         width:0
     })
-    console.log(state)
+    // console.log(state)
 
     const measuredRef = useCallback(node =>{
         if(node !== null){
@@ -27,7 +27,7 @@ const ListFilterToggler = ({state, setState}) => {
         const left = target.offsetLeft
         const width = target.offsetWidth
         setOffset({left, width})
-        console.log(id)
+        // console.log(id)
         setState(p => p.map((el,i) => id === i ?
             {...el, isActive:true}:
             {...el, isActive:false}

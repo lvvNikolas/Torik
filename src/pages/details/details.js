@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { Navigate, useParams, useRoutes } from "react-router-dom"
-import JobDetails from "../../components/jobs/jobs_details"
+import JobDetails from "./job_details/jobs_details"
 import { publicRoutes } from "../../constants/routes"
 
 // TODO Заменить дивы на details для разных страниц
@@ -9,12 +9,12 @@ const Details = ({direction}) =>{
     const {jobId} = useParams()
     const {trucksId} = useParams()
 
-    console.log(direction, jobId, trucksId)
+    // console.log(direction, jobId, trucksId)
     if(direction === JOBS.route){
         return <JobDetails/>
     }
     if(direction === ESTATE.route){
-        return <div>THIS IS JOB DETAILS</div>
+        return <div>THIS IS Estate DETAILS</div>
     }
     if(direction === SERVICES.route){
         return <div>THIS IS JOB DETAILS</div>

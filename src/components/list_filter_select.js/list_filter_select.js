@@ -16,7 +16,7 @@ const ListFilterSelect = ({state, setState, dataList}) =>{
     const handleOpen = () =>{
         setIsOpen(p => !p)
     }
-    console.log(state)
+    // console.log(state)
     const handleChoose = (el) =>{
         setState(p => ({...el}))
     }

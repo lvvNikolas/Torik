@@ -187,5 +187,37 @@ export const placeHolderData = {
           isPicture:"false" 
         },
       ]
-    }
+    },
+    EstatePage: {
+      Estates: [
+        {
+          Id:"id1",
+          EstatePoster:'https://s0.rbk.ru/v6_top_pics/media/img/5/60/756281458904605.jpg',
+          EstateTitle: "DoorDash Сдам аккаунты от собственика",
+          OwnerName: "Виталик",
+          Category:"квартира",
+          PhoneNumber: ["5623309823","5623309823"],
+          SocialLink: [
+            {
+              type:'INST',
+              link:'wa.me//'
+            },
+            {
+              type:'TG',
+              link:'t.me//'
+            }
+          ],
+          City: "Los Angeles",
+          AdsStatus: 'VIP',
+          EstateDescription: "<div>some <br>card description here<div>",
+          JobSearch: "Бизнес",
+          Date: "03.02.2023",
+          Price: "500$/день",
+          isPicture:"false"
+          
+        },
+       
+     
+      ] 
+    },
   }

@@ -1,0 +1,46 @@
+.JobDetails{
+    max-width: 1400px;
+    width: 100%;
+
+}
+.JobDetails__container{
+    width: 100%;
+    display: flex;
+}
+.JobDetails__content{
+    flex-grow: 1;
+}
+.jobDetailsSide{
+    position: sticky;
+    top: 100px;
+    max-width: 300px;
+    margin-left: var(--card_text_margin_small) ;
+    padding: var(--noimage_card_long_padding);
+    background: var(--card_bg);
+    border-radius: var(--radius);
+
+}
+.JobdetailsHeader{
+    margin-bottom: var(--title_margin_bottom);
+}
+.JobdetailsHeader__title{
+    font-style: var(--title_style);
+    margin-bottom: var(--card_text_margin_small);
+}
+.JobdetailsHeader__location{
+    color: var(--location_color);
+}
+.JobdetailsHeader__income{
+    color: var(--money_color);
+    font-weight: var(--title_weight);
+    font-size: var(--card_title_size);
+    margin-bottom: var(--card_text_margin_small);
+}
+.JobdetailsHeader__date-cat{
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: var(--card_text_margin_small);
+}
+.JobdetailsHeader__category, .JobdetailsHeader__date{
+    color: var(--hashtag_color);
+}

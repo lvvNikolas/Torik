@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom"
-import { placeHolderData } from "../../firebase/firebase_exampe"
-import DetailsDescription from "../details/details_description"
-import DetailsSide from "../details/details_side"
-import JobDetailsHeader from "./jobs_details_header"
-
+import { placeHolderData } from "../../../firebase/firebase_exampe"
+import DetailsDescription from "../../../components/details/details_description"
+import DetailsSide from "../../../components/details/details_side"
+import JobDetailsHeader from "../../../components/jobs/jobs_details_header"
+import './job_details.css'
 
 const JobDetails = () =>{
 
