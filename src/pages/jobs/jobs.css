@@ -90,3 +90,52 @@
     margin-right: auto;
     margin-left: 15px;
 }
+
+@media (max-width:1400px) {
+    .jobsPage__body{
+        flex-wrap: wrap;
+    }
+    .jobPage__filters{
+        width: 100%;
+        max-width: 100%;
+        flex-direction: row;
+        display: flex;
+        position: static;
+        
+    }
+    .jobPage__filters-btn{
+        max-width: 270px;
+        margin-right: auto;
+    }
+    .jobPage__list{
+        flex-basis: calc(100% - 240px);
+        flex-grow: 0;
+        margin: 0;
+        margin-right: 20px;
+    }
+    .jobPage__ads{
+        flex-basis: 190px;
+        flex-grow: 1;
+    }
+}
+@media (max-width:1000px) {
+    .jobPage__filters{
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .jobPage__ads{
+        display: none;
+    }
+   .jobPage__list{
+    flex-basis: 100%;
+    margin-right: 0;
+   }
+}
+@media (max-width:700px) {
+    .jobPage__filters{
+        flex-direction: column;
+    }
+    .jobPage__filters-btn{
+        max-width: 100%;
+    }
+}

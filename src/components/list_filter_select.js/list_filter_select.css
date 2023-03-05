@@ -65,3 +65,50 @@
     transform:  translateX(calc(100% + 15px)) scale(1);
     z-index: 1000;
 }
+@media (max-width:1400px) {
+    .filterSelect{
+        margin-right: 10px;
+    }
+    .filterSelect__content{
+        min-width: 280px;
+        width: 100%;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: auto;
+       
+        transform: translateX(0) translateY(100%) scale(0);
+    }
+    .filterSelect__content--open{
+        transform:  translateX(0) translateY(100%) scale(1);
+    }
+}
+@media (max-width:700px) {
+    .filterSelect{
+        margin-right: 0;
+        z-index: 10000;
+    }
+    .filterSelect__content{ 
+        transform: translateX(0) translateY(0) scaleY(1);
+        height: 0;
+        position: static;
+        overflow: hidden;
+        overflow-y: hidden;
+        transition: height 0.3s,;
+        border: none;
+        visibility: hidden;
+        padding: 0;
+    }
+    .filterSelect__content--open{
+        transform:  translateX(0) translateY(0) scaleY(1);
+        height: 300px;
+        overflow-y: auto;
+        padding: 20px;
+        border: 1px solid var(--border_color);
+        padding: 20px;
+        visibility: visible;
+        margin-bottom: 20px;
+    }
+
+}

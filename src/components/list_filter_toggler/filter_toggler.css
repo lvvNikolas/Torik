@@ -33,3 +33,13 @@
 .toggler:hover .toggler_bg{
     transform: scaleX(1.1);
 }
+@media (max-width:1400px) {
+    .toggler{
+        max-width: 300px;
+    }
+}
+@media (max-width:700px) {
+    .toggler{
+        align-self: flex-end;
+    }
+}

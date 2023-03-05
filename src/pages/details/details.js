@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { Navigate, useParams, useRoutes } from "react-router-dom"
+import JobDetails from "../../components/jobs/jobs_details"
 import { publicRoutes } from "../../constants/routes"
 
 // TODO Заменить дивы на details для разных страниц
@@ -9,7 +10,7 @@ const Details = ({direction}) =>{
 
     console.log(direction, jobId)
     if(direction === JOBS.route){
-        return <div>THIS IS JOB DETAILS</div>
+        return <JobDetails/>
     }
     if(direction === ESTATE.route){
         return <div>THIS IS JOB DETAILS</div>
