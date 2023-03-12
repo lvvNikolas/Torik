@@ -11,17 +11,17 @@ const JobsCard = ({data}) =>{
         JobDescription,
         Date,
         AdsStatus,
-        Category
+        Category,
+        ShortJobDescription
     } = data
 
     const nav = useNavigate()
     const handleNavigate = () =>{
-       
         nav(`${publicRoutes.JOBS.route}/${Id}`)
     }
     //Для форматирования строки в html верстку
     const descHtml = {
-        __html: JobDescription
+        __html: ShortJobDescription
     }
 
     return (

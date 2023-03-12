@@ -3,6 +3,7 @@ import { Link, Outlet, Route, Routes, useNavigate, useParams } from 'react-route
 import EstateList from '../../components/estate/estate_list'
 import { publicRoutes } from '../../constants/routes'
 import { placeHolderData } from '../../firebase/firebase_exampe'
+import RentDetails from '../details/rent_details/rent_details'
 import './realEstate.css'
 
 const RealEstate = () => {
@@ -18,7 +19,7 @@ const RealEstate = () => {
         <button type='button' className='estatePage__back back__btn active_link' onClick={handleReturn}>Назад</button>
         <Routes>
             <Route index element = {<EstateList/>}/>
-            {/* <Route path=':estateId' element = {}/> */}
+            <Route path=':estateId' element = {<RentDetails/>}/>
         </Routes>
     </div>
   )

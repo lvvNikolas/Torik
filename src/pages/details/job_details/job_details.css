@@ -9,16 +9,16 @@
 }
 .JobDetails__content{
     flex-grow: 1;
+    max-width: 1000px;
+    padding-right: var(--title_margin_bottom);
 }
 .jobDetailsSide{
     position: sticky;
     top: 100px;
-    max-width: 300px;
-    margin-left: var(--card_text_margin_small) ;
-    padding: var(--noimage_card_long_padding);
-    background: var(--card_bg);
+    width: 350px;
+    flex-shrink: 0;
     border-radius: var(--radius);
-
+    margin-left: auto;
 }
 .JobdetailsHeader{
     margin-bottom: var(--title_margin_bottom);
@@ -43,4 +43,14 @@
 }
 .JobdetailsHeader__category, .JobdetailsHeader__date{
     color: var(--hashtag_color);
+}
+@media (max-width:950px) {
+    .JobDetails__container{
+        flex-direction: column-reverse;
+    }
+    .jobDetailsSide{
+        width: 100%;
+        margin-left: 0;
+        top: 80px;
+    }
 }

@@ -16,7 +16,7 @@ const ServicesForm = () =>{
     }
 
     const formSubmit = values => {
-        console.log(values)
+        // console.log(values)
     }
 
     const handleExtend = () => {

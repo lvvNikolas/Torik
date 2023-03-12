@@ -12,7 +12,8 @@ const EstateCard = ({data}) =>{
         Date,
         AdsStatus,
         EstatePoster,
-        Category
+        Category,
+        ShortEstateDescription
     } = data
 
     const nav = useNavigate()
@@ -21,7 +22,7 @@ const EstateCard = ({data}) =>{
         nav(`${publicRoutes.ESTATE.route}/${Id}`)
     }
     const descHtml = {
-        __html: EstateDescription
+        __html: ShortEstateDescription
     }
 
     return (

@@ -57,6 +57,7 @@
 }
 .estatePage__card-text-content{
     padding: var(--image_card_long_padding);
+    width: 100%;
 }
 .estatePage__card-img{
     max-width: 270px;
@@ -81,6 +82,8 @@
     font-weight: var(--title_weight);
 }
 .estatePage__card-desc{
+    overflow: hidden;
+    width: 100%;
     margin-bottom: var(--card_text_margin_regular);
     font-weight: var(--text_weight);
 }

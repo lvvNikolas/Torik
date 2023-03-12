@@ -4,6 +4,8 @@ import DetailsDescription from "../../../components/details/details_description"
 import DetailsSide from "../../../components/details/details_side"
 import JobDetailsHeader from "../../../components/jobs/jobs_details_header"
 import './job_details.css'
+import DetailsBanner from "../../../components/details/details_banner"
+import { useEffect } from "react"
 
 const JobDetails = () =>{
 
@@ -15,7 +17,10 @@ const JobDetails = () =>{
    
     //Находим в массиве работ, объект нужной (кликнутой работы)
     const data = jobArray.find(el => el.Id === jobId)
- 
+    
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return (
         <div className="JobDetails">
             <div className="JobDetails__container">
@@ -27,7 +32,7 @@ const JobDetails = () =>{
                     <DetailsSide data={data}/>
                 </div>
             </div>
-            {/* Baner here */}
+            <DetailsBanner/>
             {/* Relative ads here */}
         </div>
     )

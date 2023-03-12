@@ -1,0 +1,84 @@
+.FreshAds{
+    width: 100%; 
+    padding-bottom: 100px;  
+}
+.FreshAds__container{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    min-height: 500px;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    overflow-x:scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.FreshAds__container::-webkit-scrollbar {
+    display: none;
+  }
+
+.FreshAds__page-chunk{
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 25px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.FreshAds__page-chunk:first-of-type{
+    margin-left: 0;
+}
+.FreshAds__item{
+    min-height: 165px;
+    width: calc(33% - 12.5px);
+    margin-bottom: 25px;
+    flex-shrink: 0;
+    background: #c9c9c9;
+}
+.FreshAds__paginator{
+    display: flex;
+    margin: 10px auto;
+    width: fit-content;
+}
+.FreshAds__paginator-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.FreshAds__paginator-item:last-of-type{
+    margin-right: 0;
+}
+.FreshAds__paginator-indicator{
+    height: 10px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: var(--radius);
+}
+.FreshAds__paginator-indicator--active{
+    background: #000;
+}
+.FreshAds__paginator-percent{
+    opacity: 0;
+}
+.FreshAds__paginator-percent--active{
+    opacity: 1;
+}
+
+@media (max-width:950px) {
+    .FreshAds__item{
+        width: calc(50% - 12.5px);
+    }
+}
+
+@media (max-width:500px) {
+    .FreshAds__item{
+        width: 100%;
+    }
+    .FreshAds__paginator{
+        display: none;
+    }
+}

@@ -7,7 +7,7 @@
     padding-bottom: 0;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000000;
 }
 .nav__part{
     border-radius: 20px;
