@@ -1,8 +1,9 @@
 import { placeHolderData } from "../../firebase/firebase_exampe"
 import FreshAdsCard from "./fresh_ads_card"
 import './fresh_ads.css'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useResize } from "../../hooks/useResize"
+import { useSelector } from "react-redux"
 
 const paginationHandler = (array, countPerPage) =>{
     const copy = array.map(e => e)
@@ -30,8 +31,8 @@ const FreshAdsList = ({uniqueName}) => {
     
     const width = useResize()
 
-    const itemsPerPage = 9
-
+  
+    const [itemsPerPage, setItemsPerPage] = useState(9)
     const [paginated, setPaginated] = useState(paginationHandler(data,itemsPerPage))
     const [currentPage, setCurrentPage] = useState(0)
     const [currentOffset, setCurrentOffset] = useState(0)
@@ -48,13 +49,25 @@ const FreshAdsList = ({uniqueName}) => {
         "FreshAds__paginator-percent"
     }
    
-    
+    useEffect(()=>{
+        // console.log(width)
+        // if(width > 551 && width < 950){
+        //     setItemsPerPage(4)
+        //     setPaginated(paginationHandler(data,itemsPerPage))
+        // }
+        // else if(width < 550){
+        //     setItemsPerPage(2)
+        //     setPaginated(paginationHandler(data,itemsPerPage))
+        // }
+        // else{
+        //     setItemsPerPage(9)
+        //     setPaginated(paginationHandler(data,itemsPerPage))
+        // } 
+    },[width])
 
     return(
         <div className="FreshAds">
-            <div className="FreshAds__container" onScroll={(e)=>{
-                console.log(e)
-            }}>
+            <div className="FreshAds__container">
                 {
                     paginated.map((e,i)=>
                         <div className="FreshAds__page-chunk" id={`${uniqueName}chunk${i}`}>
