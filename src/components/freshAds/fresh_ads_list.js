@@ -31,9 +31,7 @@ const FreshAdsList = ({uniqueName}) => {
     
     const width = useResize()
 
-  
-    const [itemsPerPage, setItemsPerPage] = useState(9)
-    const [paginated, setPaginated] = useState(paginationHandler(data,itemsPerPage))
+    const [paginated, setPaginated] = useState(paginationHandler(data,9))
     const [currentPage, setCurrentPage] = useState(0)
     const [currentOffset, setCurrentOffset] = useState(0)
     
@@ -50,19 +48,16 @@ const FreshAdsList = ({uniqueName}) => {
     }
    
     useEffect(()=>{
-        // console.log(width)
-        // if(width > 551 && width < 950){
-        //     setItemsPerPage(4)
-        //     setPaginated(paginationHandler(data,itemsPerPage))
-        // }
-        // else if(width < 550){
-        //     setItemsPerPage(2)
-        //     setPaginated(paginationHandler(data,itemsPerPage))
-        // }
-        // else{
-        //     setItemsPerPage(9)
-        //     setPaginated(paginationHandler(data,itemsPerPage))
-        // } 
+        console.log(width)
+        if(width > 551 && width < 950){
+            setPaginated(paginationHandler(data,4))
+        }
+        if(width < 550){
+            setPaginated(paginationHandler(data,3))
+        }
+        if(width > 950){
+            setPaginated(paginationHandler(data,9))
+        } 
     },[width])
 
     return(
@@ -89,7 +84,7 @@ const FreshAdsList = ({uniqueName}) => {
                             setCurrentPage(i)
                         }}
                          >
-                            <p className={prercentClassHandler(i)}>{(percentage / paginated.length) * 100}%</p>
+                            <p className={prercentClassHandler(i)}>{Math.floor((percentage / paginated.length) * 100)}%</p>
                             <p className={indicatorClassHandler(i)}></p>
                          </a>)
                     })
