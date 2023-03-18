@@ -1,9 +1,10 @@
 import { placeHolderData } from "../../firebase/firebase_exampe"
 import FreshAdsCard from "./fresh_ads_card"
 import './fresh_ads.css'
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { useResize } from "../../hooks/useResize"
 import { useSelector } from "react-redux"
+
 
 const paginationHandler = (array, countPerPage) =>{
     const copy = array.map(e => e)
@@ -30,10 +31,21 @@ const FreshAdsList = ({uniqueName}) => {
     const data = placeHolderFresh
     
     const width = useResize()
-
+  
     const [paginated, setPaginated] = useState(paginationHandler(data,9))
     const [currentPage, setCurrentPage] = useState(0)
-    const [currentOffset, setCurrentOffset] = useState(0)
+    const [chunkWidth, setChunkWidth] = useState(0)
+    const [left, setLeft] = useState({
+        marginLeft:0
+    })
+
+    const measuredRef = useCallback(node =>{
+        if(node !== null){
+            setChunkWidth(
+                node.getBoundingClientRect().width
+            )
+        }
+    },[width])
     
     const indicatorClassHandler = (id) =>{
         return id === currentPage ?
@@ -46,9 +58,16 @@ const FreshAdsList = ({uniqueName}) => {
         "FreshAds__paginator-percent FreshAds__paginator-percent--active":
         "FreshAds__paginator-percent"
     }
+
+    const leftHandler = (id) =>{
+        setCurrentPage(id)
+        const isMargin = () => id == 0 ? 0 : 25
+        setLeft({
+            transform: `translateX(-${chunkWidth * id + isMargin()}px)`
+        })
+    }
    
     useEffect(()=>{
-        console.log(width)
         if(width > 551 && width < 950){
             setPaginated(paginationHandler(data,4))
         }
@@ -63,30 +82,32 @@ const FreshAdsList = ({uniqueName}) => {
     return(
         <div className="FreshAds">
             <div className="FreshAds__container">
+                <div className="FreshAds__horizontal-content" style={left}>
                 {
                     paginated.map((e,i)=>
-                        <div className="FreshAds__page-chunk" id={`${uniqueName}chunk${i}`}>
+                        <div className="FreshAds__page-chunk"  ref = {measuredRef} key = {i}>
                             {
-                                e.map((card,j)=><FreshAdsCard data={card}/>)
+                                e.map((card,j)=><FreshAdsCard key={j} data={card}/>)
                             }
                         </div>
                     )
                 }
+                </div>
             </div>
             <div className="FreshAds__paginator">
                 {
                     paginated.map((e,i)=>{
                         let percentage = i + 1
                         return (
-                        <a href={`#${uniqueName}chunk${i}`}
+                        <div 
                         className = 'FreshAds__paginator-item'
                         onClick = {()=>{
-                            setCurrentPage(i)
+                           leftHandler(i)
                         }}
                          >
                             <p className={prercentClassHandler(i)}>{Math.floor((percentage / paginated.length) * 100)}%</p>
                             <p className={indicatorClassHandler(i)}></p>
-                         </a>)
+                         </div>)
                     })
                 }
             </div>

@@ -3,19 +3,28 @@
     padding-bottom: 100px;  
 }
 .FreshAds__container{
-    display: flex;
-    flex-wrap: nowrap;
+   
     align-items: flex-start;
     min-height: 500px;
     scroll-behavior: smooth;
     overflow: hidden;
-    overflow-x:scroll;
+    overflow-x:none;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
 }
 .FreshAds__container::-webkit-scrollbar {
     display: none;
-  }
+    
+}
+.FreshAds__horizontal-content{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: transform 0.3s;
+}
 
 .FreshAds__page-chunk{
     display: flex;
@@ -32,10 +41,40 @@
 }
 .FreshAds__item{
     min-height: 165px;
-    width: calc(33% - 12.5px);
+    max-width: calc(33% - 12.5px);
+    width: 100%;
     margin-bottom: 25px;
     flex-shrink: 0;
-    background: #c9c9c9;
+    background: var(--card_bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+}
+.FreshAds__image{
+    height: 100%;
+    width: 150px;
+    object-fit: cover;
+}
+.FreshAds__item-data{
+    padding: var(--image_card_long_padding_mobile);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.FreshAds__item-data h2{
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.FreshAds__item-bottom{
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.FreshAds__item-link{
+    color: var(--link_color);
 }
 .FreshAds__paginator{
     display: flex;
@@ -73,13 +112,13 @@
 
 @media (max-width:950px) {
     .FreshAds__item{
-        width: calc(50% - 12.5px);
+        max-width: calc(50% - 12.5px);
     }
 }
 
-@media (max-width:500px) {
+@media (max-width:550px) {
     .FreshAds__item{
-        width: 100%;
+        max-width:  100%;
     }
     .FreshAds__paginator{
         
