@@ -11,7 +11,6 @@ import NewJobs from './pages/newJobs/newJobs';
 import NavBar from './components/nav/nav_bar';
 import { publicRoutes } from './constants/routes';
 import AdsForm from './pages/ads_from/ads_form';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 // import AdsForm from './pages/ads_from/ads_form';
 
 
