@@ -61,7 +61,8 @@ const FreshAdsList = ({uniqueName}) => {
 
     const leftHandler = (id) =>{
         setCurrentPage(id)
-        const isMargin = () => id == 0 ? 0 : 25
+        const isMargin = () => id <= 0 ? 0 : 25 * id
+       
         setLeft({
             transform: `translateX(-${chunkWidth * id + isMargin()}px)`
         })

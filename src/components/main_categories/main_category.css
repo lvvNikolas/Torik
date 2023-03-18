@@ -1,0 +1,35 @@
+.MainCategory__container{
+    margin: 90px 0;
+}
+
+.MainCategory__content{
+    display: flex;
+    justify-content: space-between;
+
+}
+.MainCategory__title{
+    margin-bottom:45px;
+    cursor: default;
+}
+.MainCategory__card{
+    background: #c9c9c9;
+    border-radius: var(--radius);
+    width: calc(25% - 30px);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.MainCategory__card:hover{
+    transform: scale(0.9);
+}
+.MainCategory__img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.MainCategory__text{
+    padding: var(--noimage_card_long_padding);
+}
+.MainCategory__text h2{
+    margin-bottom: var(--card_text_margin_small);
+}
