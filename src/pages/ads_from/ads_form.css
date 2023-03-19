@@ -204,6 +204,7 @@
     margin-right: 15px;
     overflow: hidden;
     flex-basis: 250px;
+    padding-bottom: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .adsForm__plan-item--selected{
@@ -240,7 +241,22 @@
     color: var(--money_color);
 }
 
-
+.adsForm__plan-bonus{
+    position: absolute;
+    background: var(--black_accent);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 7px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+}
+.adsForm__plan-item:first-of-type .adsForm__plan-bonus{
+    display: none;
+}
 .adsForm__totalPrice{
     margin: var(--card_text_margin_regular) 0;
     color: var(--money_color);

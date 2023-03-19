@@ -2,6 +2,7 @@ export const placeHolderData = {
     JobPage: {
       Jobs: [
         {
+          Type:"JOBS",
           Id:"id1",
           JobTitle: "DoorDash Сдам аккаунты от собственика",
           OwnerName: "Виталик",
@@ -38,6 +39,7 @@ export const placeHolderData = {
           isPicture:"false"
         },
         {
+          Type:"JOBS",
           Id:"id2",
           JobTitle: "DoorDash Сдам аккаунты от собственика",
           OwnerName: "Виталик",
@@ -64,6 +66,7 @@ export const placeHolderData = {
           isPicture:"false"
         },
         {
+          Type:"JOBS",
           Id:"id3",
           JobTitle: "DoorDash Сдам аккаунты от собственика",
           OwnerName: "Вовчик",
@@ -95,6 +98,7 @@ export const placeHolderData = {
     TrucksPage:{
       Trucks:[
         {
+          Type:"TRUCKS",
           Id:"id1",
           TrucksTitle: "$0.80 за милю, SOLO! БЕЗ ОПЫТА! Ищем Водителей CDL A. Траки 2020-2023 года. Оплачиваем тренинг!",
           OwnerName: "Виталик",
@@ -112,6 +116,7 @@ export const placeHolderData = {
         },
 
         {
+          Type:"TRUCKS",
           Id:"id2",
           TrucksTitle: "$0.80 за милю, SOLO! БЕЗ ОПЫТА! Ищем Водителей CDL A. Траки 2020-2023 года. Оплачиваем тренинг!",
           OwnerName: "Виталик",
@@ -129,6 +134,7 @@ export const placeHolderData = {
         },
 
         {
+          Type:"TRUCKS",
           Id:"id3",
           TrucksTitle: "$0.80 за милю, SOLO! БЕЗ ОПЫТА! Ищем Водителей CDL A. Траки 2020-2023 года. Оплачиваем тренинг!",
           OwnerName: "Виталик",
@@ -151,6 +157,7 @@ export const placeHolderData = {
     ServicesPage:{
       Services:[
         {
+          Type:"SERVICES",
           Id:"id1",
           ServicesTitle: "STELLAR MORTGAGE. Эксперт по Личному Ипотечному Кредитованию!",
           OwnerName: "Виталик",
@@ -167,6 +174,7 @@ export const placeHolderData = {
           isPicture:"false" 
         },
         {
+          Type:"SERVICES",
           Id:"id2",
           ServicesTitle: "STELLAR MORTGAGE. Эксперт по Личному Ипотечному Кредитованию!",
           OwnerName: "Виталик",
@@ -183,6 +191,7 @@ export const placeHolderData = {
           isPicture:"false" 
         },
         {
+          Type:"SERVICES",
           Id:"id3",
           ServicesTitle: "STELLAR MORTGAGE. Эксперт по Личному Ипотечному Кредитованию!",
           OwnerName: "Виталик",
@@ -203,6 +212,7 @@ export const placeHolderData = {
     EstatePage: {
       Estates: [
         {
+          Type:"ESTATES",
           Id:"id1",
           EstatePoster:'https://s0.rbk.ru/v6_top_pics/media/img/5/60/756281458904605.jpg',
           EstateTitle: "Двушка с клопами",
@@ -241,6 +251,7 @@ export const placeHolderData = {
           
         },
         {
+          Type:"ESTATES",
           Id:"id2",
           EstatePoster:'https://s0.rbk.ru/v6_top_pics/media/img/5/60/756281458904605.jpg',
           EstateTitle: "Двушка с клопами",

@@ -2,6 +2,7 @@ import JobForm from "./job_form"
 import WorkForm from "./job_form"
 import RentForm from "./rent_form"
 import ServicesForm from "./services_form"
+import TrucksForm from "./trucks_form"
 
 
 const FormContainer = ({data}) =>{
@@ -9,7 +10,8 @@ const FormContainer = ({data}) =>{
     const forms = [
         <JobForm/>,
         <RentForm/>,
-        <ServicesForm/>
+        <ServicesForm/>,
+        <TrucksForm/>
     ]
     const idFormHandler = () =>{
         return data.filter(e => e.isActive)[0].id

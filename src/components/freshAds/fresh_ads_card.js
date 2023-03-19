@@ -2,7 +2,7 @@ import './fresh_ads.css'
 import noImage from '../../assets/no_image.svg'
 import { useCallback, useState } from 'react'
 import { useResize } from '../../hooks/useResize'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { publicRoutes } from '../../constants/routes'
 import { VipStatusSign } from '../vip-status/vip_status'
 import { VIP } from '../../constants/vip_status'
@@ -10,11 +10,54 @@ import { VIP } from '../../constants/vip_status'
 const FreshAdsCard = ({data, image = noImage}) => {
     
     const {
-        ServicesTitle,
+        Id,
         Category,
         OwnerName,
         Date, 
+        Type
     } = data
+
+    const nav = useNavigate()
+    // Пришлось дополнительно делать деструктуризацию названия объявления
+    // Так как поле имеет разыне название у jobsTitle у services Services titile
+    // и т.д.
+
+    const title = data.JobTitle || 
+    data.TrucksTitle || 
+    data.ServicesTitle || 
+    data.EstateTitle
+ 
+    
+    const handleCategories = () => {
+        if(Type === "JOBS"){
+            return {
+                name:"Jobs",
+                route:publicRoutes.JOBS.route
+            }
+        }
+        if(Type === "SERVICES"){
+            return {
+                name:"Services",
+                route:publicRoutes.SERVICES.route
+            }
+        }
+        if(Type === "TRUCKS"){
+            return {
+                name:"Trucks",
+                route:publicRoutes.TRUCKS.route
+            }
+        }
+        if(Type === "ESTATE"){
+            return {
+                name:"Estates",
+                route:publicRoutes.ESTATE.route
+            }
+        }
+    }
+
+    const handleClickRedirect = () => {
+        nav(`${handleCategories().route}/${Id}`)
+    }
     
     const [cardWidth, setCardWidth] = useState(0)
     const windowWidth = useResize()
@@ -30,18 +73,18 @@ const FreshAdsCard = ({data, image = noImage}) => {
     },[windowWidth])
 
     return(
-        <div className="FreshAds__item">
+        <Link className="FreshAds__item" to = {`${handleCategories().route}/${Id}`}>
             <img className='FreshAds__image' src={image} />
             <div className='FreshAds__item-data' ref={measuredRef}>
                 <h2 style={{
                     width:cardWidth
-                }}>{ServicesTitle}</h2>
+                }}>{title}</h2>
                 <div className='FreshAds__item-bottom'>
-                    <Link className = 'FreshAds__item-link' to = {publicRoutes.SERVICES.route}>{publicRoutes.SERVICES.name}</Link>
+                    <Link className = 'active_link FreshAds__item-link' to = {handleCategories().route}>{handleCategories().name}</Link>
                     <VipStatusSign status={VIP} size = "sm"/>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

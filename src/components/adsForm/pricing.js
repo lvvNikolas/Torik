@@ -1,6 +1,6 @@
 import { Field } from "formik"
 import { useEffect, useState } from "react"
-import { PricingPlansJob, PricingPlansRent, PricingPlansService } from "../../constants/pricing"
+import { PricingPlansJob, PricingPlansRent, PricingPlansService, PricingPlansTrucks } from "../../constants/pricing"
 
 // TODO добавить аутлайн в карточки, добавить элементам списка украшений, добавить бордер снизу тайтла первой карточке
 const Pricing = ({adsType}) =>{
@@ -33,6 +33,12 @@ const Pricing = ({adsType}) =>{
             setPlans({
                 name:'servicesPlans',
                 values:PricingPlansService
+            })
+        }
+        if(adsType === "TRUCKS"){
+            setPlans({
+                name:'trucksPlans',
+                values:PricingPlansTrucks
             })
         }
     },[])

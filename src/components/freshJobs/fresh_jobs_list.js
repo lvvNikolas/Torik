@@ -1,9 +1,11 @@
 import { placeHolderData } from "../../firebase/firebase_exampe"
-import FreshAdsCard from "./fresh_ads_card"
-import './fresh_ads.css'
+import FreshJobsCard from "./fresh_jobs_card"
+import './fresh_jobs.css'
 import { useCallback, useEffect, useState } from "react"
 import { useResize } from "../../hooks/useResize"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import { publicRoutes } from "../../constants/routes"
 
 
 const paginationHandler = (array, countPerPage) =>{
@@ -16,19 +18,17 @@ const paginationHandler = (array, countPerPage) =>{
     return(resultarr)
 }
 
-const services = placeHolderData.ServicesPage.Services
 const jobs = placeHolderData.JobPage.Jobs
-const trucks = placeHolderData.TrucksPage.Trucks
 
 const placeHolderFresh = [
-    ...services,
+    ...jobs,
     ...jobs, 
-    ...trucks, 
-    ...services, 
-    ...services
+    ...jobs, 
+    ...jobs, 
+    ...jobs
 ]
 
-const FreshAdsList = () => {
+const FreshJobsList = () => {
  
     const data = placeHolderFresh
     
@@ -51,14 +51,14 @@ const FreshAdsList = () => {
     
     const indicatorClassHandler = (id) =>{
         return id === currentPage ?
-        "FreshAds__paginator-indicator FreshAds__paginator-indicator--active":
-        "FreshAds__paginator-indicator"
+        "FreshJobs__paginator-indicator FreshJobs__paginator-indicator--active":
+        "FreshJobs__paginator-indicator"
     }
 
     const prercentClassHandler = (id) =>{
         return id === currentPage ?
-        "FreshAds__paginator-percent FreshAds__paginator-percent--active":
-        "FreshAds__paginator-percent"
+        "FreshJobs__paginator-percent FreshJobs__paginator-percent--active":
+        "FreshJobs__paginator-percent"
     }
 
     const leftHandler = (id) =>{
@@ -78,33 +78,38 @@ const FreshAdsList = () => {
             setPaginated(paginationHandler(data,3))
         }
         if(width > 950){
-            setPaginated(paginationHandler(data,9))
+            setPaginated(paginationHandler(data,6))
         } 
     },[width])
 
     return(
-        <div className="FreshAds">
-            <h2 className="section__title FreshAds__title">Топ объявлений</h2>
-            <div className="FreshAds__container">
-                <div className="FreshAds__horizontal-content" style={left}>
+        <div className="FreshJobs">
+            <div className="FreshJobs__header">
+                <h2 className="section__title">Свежие вакансии</h2>
+                <Link to={publicRoutes.JOBS.route}
+                className="FreshJobs__header-link active_link">Смотреть все</Link>
+            </div>
+            
+            <div className="FreshJobs__container">
+                <div className="FreshJobs__horizontal-content" style={left}>
                 {
                     paginated.map((e,i)=>
-                        <div className="FreshAds__page-chunk"  ref = {measuredRef} key = {i}>
+                        <div className="FreshJobs__page-chunk"  ref = {measuredRef} key = {i}>
                             {
-                                e.map((card,j)=><FreshAdsCard key={j} data={card}/>)
+                                e.map((card,j)=><FreshJobsCard key={j} data={card}/>)
                             }
                         </div>
                     )
                 }
                 </div>
             </div>
-            <div className="FreshAds__paginator">
+            <div className="FreshJobs__paginator">
                 {
                     paginated.map((e,i)=>{
                         let percentage = i + 1
                         return (
                         <div 
-                        className = 'FreshAds__paginator-item'
+                        className = 'FreshJobs__paginator-item'
                         onClick = {()=>{
                            leftHandler(i)
                         }}
@@ -119,4 +124,4 @@ const FreshAdsList = () => {
     )
 }
 
-export default FreshAdsList
+export default FreshJobsList

@@ -1,8 +1,8 @@
-.FreshAds{
+.FreshJobs{
     width: 100%; 
     padding-bottom: 100px;  
 }
-.FreshAds__container{
+.FreshJobs__container{
    
     align-items: flex-start;
     min-height: 500px;
@@ -15,21 +15,31 @@
     display: flex;
     flex-wrap: nowrap;
 }
-.FreshAds__title{
+.FreshJobs__header{
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 45px;
+    align-items: center;
+    
 }
-.FreshAds__container::-webkit-scrollbar {
+.FreshJobs__header-link{
+    padding: 25px 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border_color);
+    color: var(--link_color);
+}
+.FreshJobs__container::-webkit-scrollbar {
     display: none;
     
 }
-.FreshAds__horizontal-content{
+.FreshJobs__horizontal-content{
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
     transition: transform 0.3s;
 }
 
-.FreshAds__page-chunk{
+.FreshJobs__page-chunk{
     display: flex;
     flex-shrink: 0;
     width: 100%;
@@ -39,11 +49,11 @@
     justify-content: space-between;
     align-content: flex-start;
 }
-.FreshAds__page-chunk:first-of-type{
+.FreshJobs__page-chunk:first-of-type{
     margin-left: 0;
 }
-.FreshAds__item{
-    min-height: 165px;
+.FreshJobs__item{
+    min-height: 225px;
     max-width: calc(33% - 12.5px);
     width: 100%;
     margin-bottom: 25px;
@@ -55,45 +65,50 @@
     cursor: pointer;
     transition: transform 0.3s;
 }
-.FreshAds__item:hover{
-   /* transform: scale(0.99); */
+.FreshJobs__item:hover{
+    /* transform: scale(0.98); */
 }
-
-.FreshAds__item:hover .FreshAds__item-data h2{
+.FreshJobs__item-income{
+    color:var(--money_color);
+    font-size: var( --card_title_size);
+    font-weight: 800;
+    margin-top: 15px;
+}
+.FreshJobs__item:hover .FreshJobs__item-data h2{
     color: var(--active_color);
 }
-.FreshAds__image{
+.FreshJobs__image{
     height: 100%;
     width: 150px;
     object-fit: cover;
 }
-.FreshAds__item-data{
+.FreshJobs__item-data{
     padding: var(--image_card_long_padding_mobile);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
-.FreshAds__item-data h2{
+.FreshJobs__item-data h2{
     font-size: 1rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-.FreshAds__item-bottom{
+.FreshJobs__item-bottom{
     display: flex;
     margin-top: auto;
     align-items: center;
     justify-content: space-between;
 }
-.FreshAds__item-link{
-    color: var(--link_color);
+.FreshJobs__item-loc{
+    color: var(--location_color);
 }
-.FreshAds__paginator{
+.FreshJobs__paginator{
     display: flex;
     margin: 10px auto;
     width: fit-content;
 }
-.FreshAds__paginator-item{
+.FreshJobs__paginator-item{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,39 +120,39 @@
     transition: transform 0.3s;
     cursor: pointer;
 }
-.FreshAds__paginator-item:hover{
+.FreshJobs__paginator-item:hover{
     transform: translateY(-5px);
 }
-.FreshAds__paginator-item:last-of-type{
+.FreshJobs__paginator-item:last-of-type{
     margin-right: 0;
 }
-.FreshAds__paginator-indicator{
+.FreshJobs__paginator-indicator{
     height: 10px;
     width: 100%;
     border: 1px solid black;
     border-radius: var(--radius);
 }
-.FreshAds__paginator-indicator--active{
+.FreshJobs__paginator-indicator--active{
     background: #000;
 }
-.FreshAds__paginator-percent{
+.FreshJobs__paginator-percent{
     opacity: 0;
 }
-.FreshAds__paginator-percent--active{
+.FreshJobs__paginator-percent--active{
     opacity: 1;
 }
 
 @media (max-width:950px) {
-    .FreshAds__item{
+    .FreshJobs__item{
         max-width: calc(50% - 12.5px);
     }
 }
 
 @media (max-width:550px) {
-    .FreshAds__item{
+    .FreshJobs__item{
         max-width:  100%;
     }
-    .FreshAds__paginator{
+    .FreshJobs__paginator{
         
     }
 }
