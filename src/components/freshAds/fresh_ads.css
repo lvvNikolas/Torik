@@ -54,6 +54,7 @@
     display: flex;
     cursor: pointer;
     transition: transform 0.3s;
+    text-decoration: none;
 }
 .FreshAds__item:hover{
    /* transform: scale(0.99); */
@@ -87,6 +88,7 @@
 }
 .FreshAds__item-link{
     color: var(--link_color);
+
 }
 .FreshAds__paginator{
     display: flex;
