@@ -1,5 +1,7 @@
 import React from 'react'
 import FreshAdsList from '../../components/freshAds/fresh_ads_list'
+import FreshEstateList from '../../components/freshEstate/fresh_estate_list'
+import FreshEstate from '../../components/freshEstate/fresh_estate_list'
 import FreshJobsList from '../../components/freshJobs/fresh_jobs_list'
 import MainCategoryCard from '../../components/main_categories/main_category_card'
 import MainCategoryCards from '../../components/main_categories/main_category_cards'
@@ -24,6 +26,7 @@ const home = () => {
         <MainCategoryCards routesArr = {routes}/>
         <FreshAdsList/>
         <FreshJobsList/>
+        <FreshEstateList/>
     </div>
   )
 }
