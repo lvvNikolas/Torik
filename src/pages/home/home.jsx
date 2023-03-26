@@ -5,6 +5,7 @@ import FreshEstate from '../../components/freshEstate/fresh_estate_list'
 import FreshJobsList from '../../components/freshJobs/fresh_jobs_list'
 import MainCategoryCard from '../../components/main_categories/main_category_card'
 import MainCategoryCards from '../../components/main_categories/main_category_cards'
+import Popup from '../../components/popup/popup'
 import { publicRoutes } from '../../constants/routes'
 
 import './home.css'

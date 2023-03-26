@@ -29,7 +29,8 @@ const FreshEstateCard = ({data}) => {
         }
     }
 
-    const handleClickRedirect = () => {
+    const handleClickRedirect = (event) => {
+        event.stopPropagation()
         nav(`${handleCategory().route}/${Id}`)
     }
     
@@ -47,19 +48,19 @@ const FreshEstateCard = ({data}) => {
     },[windowWidth])
 
     return(
-        <Link className="FreshEstates__item" to = {`${handleCategory().route}/${Id}`}>
+        <div className="FreshEstates__item" onClick={handleClickRedirect}>
             <img className='FreshEstates__image' src={EstatePoster} />
             <div className='FreshEstates__item-data' ref={measuredRef}>
                 <h2 style={{
                     width:cardWidth
                 }}>{EstateTitle}</h2>
                 <div className='FreshEstates__item-bottom'>
-                    <Link className = 'active_link FreshEstates__item-link' 
+                    <Link className = 'active_link FreshEstates__item-link' onClick={(e)=>e.stopPropagation()}
                         to = {handleCategory().route}>{handleCategory().name}</Link>
                     <VipStatusSign status={VIP} size = "sm"/>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 

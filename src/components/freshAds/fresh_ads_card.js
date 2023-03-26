@@ -55,7 +55,8 @@ const FreshAdsCard = ({data, image = noImage}) => {
         }
     }
 
-    const handleClickRedirect = () => {
+    const handleClickRedirect = (event) => {
+        event.stopPropagation()
         nav(`${handleCategories().route}/${Id}`)
     }
     
@@ -73,18 +74,19 @@ const FreshAdsCard = ({data, image = noImage}) => {
     },[windowWidth])
 
     return(
-        <Link className="FreshAds__item" to = {`${handleCategories().route}/${Id}`}>
+        <div className="FreshAds__item" onClick={handleClickRedirect}>
             <img className='FreshAds__image' src={image} />
             <div className='FreshAds__item-data' ref={measuredRef}>
                 <h2 style={{
                     width:cardWidth
                 }}>{title}</h2>
                 <div className='FreshAds__item-bottom'>
-                    <Link className = 'active_link FreshAds__item-link' to = {handleCategories().route}>{handleCategories().name}</Link>
+                    <Link className = 'active_link FreshAds__item-link' onClick={(e)=>e.stopPropagation()}
+                    to = {handleCategories().route}>{handleCategories().name}</Link>
                     <VipStatusSign status={VIP} size = "sm"/>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 

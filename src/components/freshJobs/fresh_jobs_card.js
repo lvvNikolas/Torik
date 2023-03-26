@@ -33,7 +33,8 @@ const FreshJobsCard = ({data, image = noImage}) => {
         }
     },[windowWidth])
     
-    const handleClickRedirect = () => {
+    const handleClickRedirect = (event) => {
+        event.stopPropagation()
         nav(`${publicRoutes.JOBS.route}/${Id}`)
     }
     return(

@@ -11,16 +11,18 @@ import NewJobs from './pages/newJobs/newJobs';
 import NavBar from './components/nav/nav_bar';
 import { publicRoutes } from './constants/routes';
 import AdsForm from './pages/ads_from/ads_form';
+import { usePopup } from './components/popup/popup';
+import { useEffect } from 'react';
 
 // import AdsForm from './pages/ads_from/ads_form';
-
+// TODO разобраться с ключами во всем эпп
 
 function App() {
 
   const {FORM,MAIN,JOBS,ESTATE,SERVICES,TRUCKS} = publicRoutes
 
   const location = useLocation()
-  
+
   return (
     <div className="App">
        <NavBar/>

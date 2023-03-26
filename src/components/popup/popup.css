@@ -1,0 +1,23 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: var(--radius);
+    transform: translate(-50%, calc(-100% - 20px));
+    transition: transform 0.3s;
+    z-index: 1000000;
+    background: var(--card_bg);
+    border: 1px solid var(--border_color);
+    text-align: center;
+}
+.popup--show{
+    transform: translate(-50%, 20px);
+}
+.popup button{
+    border: none;
+    outline: none;
+    background: none;
+}

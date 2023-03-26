@@ -110,7 +110,7 @@ function FreshEstateList(props) {
                     paginated.map((e,i)=>
                         <div className="FreshEstates__page-chunk"  ref = {measuredRef} key = {i}>
                             {
-                                e.map((card,j)=><FreshEstateCard key={i} data = {card}/>)
+                                e.map((card,j)=><FreshEstateCard key={j} data = {card}/>)
                             }
                         </div>
                     )
