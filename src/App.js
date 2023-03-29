@@ -31,8 +31,8 @@ function App() {
               <Route path={MAIN.route} element={<Home/>}/>
               <Route path={`${JOBS.route}/*`}  element={<Jobs/>}/>
               <Route path={`${ESTATE.route}/*`}  element={<RealEstate/>}/>
-              <Route path={SERVICES.route}  element={<Services/>}/>
-              <Route path={TRUCKS.route}  element={<Trucks/>}/>
+              <Route path={`${SERVICES.route}/*`}  element={<Services/>}/>
+              <Route path={`${TRUCKS.route}/*`}  element={<Trucks/>}/>
               {/* <Route path='freshAds' element={<FreshAds/>}/>
               <Route path='topServices' element={<TopServices/>}/>
               <Route path='newJobs' element={<NewJobs/>}/>

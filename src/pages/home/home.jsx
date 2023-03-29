@@ -10,7 +10,7 @@ import { publicRoutes } from '../../constants/routes'
 
 import './home.css'
 
-const home = () => {
+const Home = () => {
 
   const routes = [
     publicRoutes.JOBS,
@@ -32,4 +32,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home
