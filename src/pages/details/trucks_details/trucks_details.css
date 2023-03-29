@@ -1,18 +1,18 @@
-.JobDetails{
+.TrucksDetails{
     max-width: 1400px;
     width: 100%;
 
 }
-.JobDetails__container{
+.TrucksDetails__container{
     width: 100%;
     display: flex;
 }
-.JobDetails__content{
+.TrucksDetails__content{
     flex-grow: 1;
     max-width: 1000px;
     padding-right: var(--title_margin_bottom);
 }
-.jobDetailsSide{
+.TrucksDetailsSide{
     position: sticky;
     top: 100px;
     width: 350px;
@@ -20,35 +20,35 @@
     border-radius: var(--radius);
     margin-left: auto;
 }
-.JobdetailsHeader{
+.TrucksdetailsHeader{
     margin-bottom: var(--title_margin_bottom);
 }
-.JobdetailsHeader__title{
+.TrucksdetailsHeader__title{
     font-style: var(--title_style);
     margin-bottom: var(--card_text_margin_small);
 }
-.JobdetailsHeader__location{
+.TrucksdetailsHeader__location{
     color: var(--location_color);
 }
-.JobdetailsHeader__income{
+.TrucksdetailsHeader__income{
     color: var(--money_color);
     font-weight: var(--title_weight);
     font-size: var(--card_title_size);
     margin-bottom: var(--card_text_margin_small);
 }
-.JobdetailsHeader__date-cat{
+.TrucksdetailsHeader__date-cat{
     justify-content: space-between;
     width: 100%;
     margin-bottom: var(--card_text_margin_small);
 }
-.JobdetailsHeader__category, .JobdetailsHeader__date{
+.TrucksdetailsHeader__category, .TrucksdetailsHeader__date{
     color: var(--hashtag_color);
 }
 @media (max-width:950px) {
-    .JobDetails__container{
+    .TrucksDetails__container{
         flex-direction: column-reverse;
     }
-    .jobDetailsSide{
+    .TrucksDetailsSide{
         width: 100%;
         margin-left: 0;
         top: 80px;

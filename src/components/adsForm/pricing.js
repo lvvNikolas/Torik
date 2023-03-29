@@ -10,7 +10,11 @@ const Pricing = ({adsType}) =>{
         values:[]
     })
 
-    const [currentPlan, setCurrentPlan] = useState('')
+    // TODO Убрать хардкод цены
+    const [currentPlan, setCurrentPlan] = useState({
+        id:1,
+        price:'50$'
+    })
      
     useEffect(()=>{
         if(adsType === "JOB"){

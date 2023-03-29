@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
+import { publicRoutes } from "../../constants/routes"
 import { VipStatusSign } from "../vip-status/vip_status"
 
 

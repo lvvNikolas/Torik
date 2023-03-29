@@ -2,17 +2,17 @@ import { Field, Formik } from "formik"
 import { useState } from "react"
 import Pricing from "./pricing"
 
-const ServicesForm = () =>{
+const TrucksForm = () =>{
     const [extend, setExtend] = useState(false)
     
     const initialValues = {
-        serviceTitle:'',
-        serviceDescription:'',
-        serviceCity:'',
-        serviceOwnerName:'',
-        serviceOwnerPhone:'',
-        setviceOwnerMail:'',
-        servicesPlans:''
+        trucksTitle:'',
+        trucksDescription:'',
+        trucksCity:'',
+        trucksOwnerName:'',
+        trucksOwnerPhone:'',
+        trucksOwnerMail:'',
+        trucksPlans:''
     }
 
     const formSubmit = values => {
@@ -36,69 +36,69 @@ const ServicesForm = () =>{
         {
             ({ values, handleSubmit, handleChange }) => <form className="adsForm__form" onSubmit={handleSubmit}>
 
-<label className="adsForm-label" htmlFor="serviceTitleId">Название компании<span>*</span></label>
+<label className="adsForm-label" htmlFor="trucksTitleId">Название компании<span>*</span></label>
                     <Field
                         className={"adsForm_input"}
                         type={'text'}
-                        id={'serviceTitleId'}
-                        name={'serviceTitle'}
-                        placeholder="Адвокат Иванов Сергей"
+                        id={'trucksTitleId'}
+                        name={'trucksTitle'}
+                        placeholder="Горные Дьяволы Доставка грузов по всей стране"
                         onChange={handleChange}
-                        value={values.serviceTitle}
+                        value={values.trucksTitle}
                     />
 
-<label className="adsForm-label" htmlFor="serviceDescriptionId">Описание объявления<span>*</span></label>
+<label className="adsForm-label" htmlFor="trucksDescriptionId">Описание объявления<span>*</span></label>
                     <Field
                         as="textarea"
-                        id={'serviceDescriptionId'}
-                        name={'serviceDescription'}
+                        id={'trucksDescriptionId'}
+                        name={'trucksDescription'}
                         className={"adsForm_input"}
                         onChange={handleChange}
-                        value={values.serviceDescription}
-                        placeholder="Индивидуальная практика"
+                        value={values.trucksDescription}
+                        placeholder="Мы предлагаем вам доставку грузов по всей стране. Мы работаем с 2000 года."
                     />
                     
-                    <label className="adsForm-label" htmlFor="serviceCityId">Адрес<span>*</span></label>
+                    <label className="adsForm-label" htmlFor="trucksCityId">Адрес<span>*</span></label>
                     <Field
                         className={"adsForm_input"}
                         type={'text'}
-                        id={'serviceCityId'}
-                        name={'serviceCity'}
+                        id={'trucksCityId'}
+                        name={'trucksCity'}
                         placeholder="Лос-Анжелес, Оранж стрит 27"
                         onChange={handleChange}
                         value={values.serviceCity}
                     />
 
-<label className="adsForm-label" htmlFor="serviceOwnerNameId">Контактное лицо<span>*</span></label>
+<label className="adsForm-label" htmlFor="trucksOwnerNameId">Контактное лицо<span>*</span></label>
                     <Field
                     type = {'text'}
-                        id={'serviceOwnerNameId'}
-                        name={'serviceOwnerName'}
+                        id={'trucksOwnerNameId'}
+                        name={'trucksOwnerName'}
                         className={"adsForm_input"}
                         onChange={handleChange}
-                        value={values.serviceOwnerName}
+                        value={values.trucksOwnerName}
                         placeholder="Иванов Сергей"
                     />
                     
-<label className="adsForm-label" htmlFor="serviceOwnerPhoneId">Телефон<span>*</span></label>
+<label className="adsForm-label" htmlFor="trucksOwnerPhoneId">Телефон<span>*</span></label>
                     <Field
                     type = {'phone'}
-                        id={'serviceOwnerPhoneId'}
-                        name={'serviceOwnerPhone'}
+                        id={'trucksOwnerPhoneId'}
+                        name={'trucksOwnerPhone'}
                         className={"adsForm_input"}
                         onChange={handleChange}
-                        value={values.serviceOwnerPhone}
+                        value={values.trucksOwnerPhone}
                         placeholder="+19239123123"
                     />
 
-<label className="adsForm-label" htmlFor="setviceOwnerMailId">Почта<span>*</span></label>
+<label className="adsForm-label" htmlFor="trucksOwnerMailId">Почта<span>*</span></label>
                     <Field
                     type = {'email'}
-                        id={'setviceOwnerMailId'}
-                        name={'setviceOwnerMail'}
+                        id={'trucksOwnerMailId'}
+                        name={'trucksOwnerMail'}
                         className={"adsForm_input"}
                         onChange={handleChange}
-                        value={values.setviceOwnerMail}
+                        value={values.trucksOwnerMail}
                         placeholder="user@gmail.com"
                     />
 
@@ -129,4 +129,4 @@ const ServicesForm = () =>{
     )
 }
 
-export default ServicesForm
+export default TrucksForm

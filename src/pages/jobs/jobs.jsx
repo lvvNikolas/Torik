@@ -4,7 +4,7 @@ import JobsCard from '../../components/jobs/jobs_card'
 import JobList from '../../components/jobs/jobs_list'
 import { publicRoutes } from '../../constants/routes'
 import { placeHolderData } from '../../firebase/firebase_exampe'
-import Details from '../details/details'
+import JobDetails from '../details/job_details/jobs_details'
 import './jobs.css'
 
 const Jobs = () => {
@@ -19,7 +19,7 @@ const Jobs = () => {
         <button type='button' className='jobsPage__back back__btn active_link' onClick={handleReturn}>Назад</button>
         <Routes>
             <Route index element = {<JobList/>}/>
-            <Route path=':jobId' element = {<Details direction={publicRoutes.JOBS.route}/>}/>
+            <Route path=':jobId' element = {<JobDetails/>}/>
         </Routes>
     </div>
   )

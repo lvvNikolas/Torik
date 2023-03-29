@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     border-radius: var(--radius);
-    padding: 8px 0;
+    padding: 8px 25px;
     background: var(--vip_bg);
     position: relative;
 }   

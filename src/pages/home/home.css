@@ -1,6 +1,9 @@
-.home{
-    font-size: 50px;
+.homePage{
+    max-width: 1400px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 var(--container_horizontal_padding);
+}
+.homePage__title{
     text-align: center;
-    color: salmon;
-    margin-top: 300px;
 }

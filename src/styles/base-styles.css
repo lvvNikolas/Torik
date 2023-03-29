@@ -17,10 +17,10 @@
     --black_accent:#2D3038;
     --main_font_color:#334454;
     --reverse_font_color:#fff;
-    --super-vip_bg:#424166;
-    --vip_bg:#585780;
-    --super-vip_color:#FFB156;
-    --vip_color:#C6B8FF;
+    --super-vip_bg:radial-gradient(22.96% 67.65% at 82.85% 106.86%, #FF8D4E 0%, rgba(228, 160, 124, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(43.48% 187.38% at -2.66% -9.8%, #1203BE 0%, rgba(255, 177, 86, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, linear-gradient(92.81deg, #D356FF 1.33%, #FFE607 98.75%);
+    --vip_bg:radial-gradient(33.09% 121.7% at 68.36% 0%, #FF0ECA 0.52%, rgba(90, 88, 130, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, linear-gradient(93.28deg, #4C9BE4 12.29%, #B482DC 92%);
+    --super-vip_color:#ffffff;
+    --vip_color:#ffffff;
      /* опционально (в разработке)
         цвет категорий( для объявлений, услуг и типа недвижки)
      */

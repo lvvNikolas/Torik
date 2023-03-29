@@ -1,0 +1,122 @@
+.EstateDetails{
+    max-width: 1400px;
+    width: 100%;
+}
+.EstateDetails__container{
+    width: 100%;
+    display: flex;
+}
+.EstateDetails__content{
+    max-width: 1000px;
+    flex-grow: 1;
+    padding-right: var(--title_margin_bottom);
+}
+.EstateDetailsSide{
+    position: sticky;
+    top: 100px;
+    width: 350px;
+    flex-shrink: 0;
+    border-radius: var(--radius);
+    margin-left: auto;
+}
+.EstatedetailsHeader{
+    margin-bottom: var(--title_margin_bottom);
+}
+.EstatedetailsHeader__title{
+    font-style: var(--title_style);
+    margin-bottom: var(--card_text_margin_small);
+}
+.EstatedetailsHeader__location{
+    color: var(--location_color);
+}
+.EstatedetailsHeader__income{
+    color: var(--money_color);
+    font-weight: var(--title_weight);
+    font-size: var(--card_title_size);
+    margin-bottom: var(--card_text_margin_small);
+}
+.EstatedetailsHeader__date-cat{
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: var(--card_text_margin_small);
+}
+.EstatedetailsHeader__category, .EstatedetailsHeader__date{
+    color: var(--hashtag_color);
+}
+.EstateDetails__photos-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: var(--card_text_margin_regular);
+}
+.EstateDetails__photos-current{
+    max-width: 600px;
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: var(--card_text_margin_small);
+}
+.EstateDetails__no-photo{
+    max-width: 400px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eeeeee;
+    color: #b6b6b6;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+.EstateDetails__photos-other{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.EstateDetails__photos-item{
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: var(--radius);
+    width: 200px;
+    height: 150px; 
+    margin-bottom:var(--card_text_margin_small);
+    margin-right: var(--card_text_margin_small);
+    cursor: pointer;
+}
+.EstateDetails__photos-item--active{
+    transform: scale(0.9);
+    border: 3px solid var(--active_color);
+}
+@media (max-width:950px) {
+    .EstateDetails__container{
+        flex-direction: column-reverse;
+    }
+    .EstateDetailsSide{
+        top: 80px;
+        width: 100%;
+        margin-left: 0;
+    }
+    .EstateDetails__content{
+        padding-right: 0;
+    }
+    .EstateDetails__photos-other{
+        justify-content: space-between;
+    }
+    .EstateDetails__photos-item{
+        margin-right: 0;
+        width: calc(33% - var(--card_text_margin_small));
+    }
+ 
+}
+@media (max-width:500px) {
+    .EstateDetails__photos-current{
+        max-width: 500px;
+        height: 250px;
+    }
+    .EstateDetails__photos-item{
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: calc(50% - (var(--card_text_margin_small) / 2));
+    }
+}

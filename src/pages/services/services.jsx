@@ -4,7 +4,7 @@ import  ServicesCard from '../../components/services/ServicesCard'
 import ServicesList from '../../components/services/ServicesList'
 import { publicRoutes } from '../../constants/routes'
 import { placeHolderData } from '../../firebase/firebase_exampe'
-import Details from '../details/details'
+import ServicesDetails from '../details/services_details/services_details'
 import './services.css'
 
 const Services = () => {
@@ -19,7 +19,8 @@ const Services = () => {
         <button type='button' className='ServicesPage__back back__btn active_link' onClick={handleReturn}>Назад</button>
         <Routes>
             <Route index element = {<ServicesList/>}/>
-            <Route path=':servicesId' element = {<Details direction={publicRoutes.SERVICES.route}/>}/>
+            {/* <Route path=':servicesId' element = {}/> */}
+            <Route path=':servicesId' element = {<ServicesDetails/>}/>
         </Routes>
     </div>
   )

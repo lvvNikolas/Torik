@@ -1,3 +1,5 @@
+import './details_styles.css'
+
 const DetailsSide = ({data}) =>{
 
     const {OwnerName,PhoneNumber,SocialLink, Avalible} = data
@@ -14,9 +16,11 @@ const DetailsSide = ({data}) =>{
             {
                 phone.map((e,i)=><a href="" className="detailsSide__phone">{e}</a>)
             }
-            {
-                SocialLink.map((e,i)=><a className="detailsSide__social" href={e.link}>{e.type}</a>)
-            }
+            <div className='detailsSide__social-container'>
+                {
+                    SocialLink.map((e,i)=><a className="detailsSide__social" href={e.link}>{e.type}</a>)
+                }
+            </div>
         </div>
     )
 }

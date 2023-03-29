@@ -1,18 +1,18 @@
-.JobDetails{
+.ServicesDetails{
     max-width: 1400px;
     width: 100%;
 
 }
-.JobDetails__container{
+.ServicesDetails__container{
     width: 100%;
     display: flex;
 }
-.JobDetails__content{
+.ServicesDetails__content{
     flex-grow: 1;
     max-width: 1000px;
     padding-right: var(--title_margin_bottom);
 }
-.jobDetailsSide{
+.ServicesDetailsSide{
     position: sticky;
     top: 100px;
     width: 350px;
@@ -20,35 +20,35 @@
     border-radius: var(--radius);
     margin-left: auto;
 }
-.JobdetailsHeader{
+.ServicesdetailsHeader{
     margin-bottom: var(--title_margin_bottom);
 }
-.JobdetailsHeader__title{
+.ServicesdetailsHeader__title{
     font-style: var(--title_style);
     margin-bottom: var(--card_text_margin_small);
 }
-.JobdetailsHeader__location{
+.ServicesdetailsHeader__location{
     color: var(--location_color);
 }
-.JobdetailsHeader__income{
+.ServicesdetailsHeader__income{
     color: var(--money_color);
     font-weight: var(--title_weight);
     font-size: var(--card_title_size);
     margin-bottom: var(--card_text_margin_small);
 }
-.JobdetailsHeader__date-cat{
+.ServicesdetailsHeader__date-cat{
     justify-content: space-between;
     width: 100%;
     margin-bottom: var(--card_text_margin_small);
 }
-.JobdetailsHeader__category, .JobdetailsHeader__date{
+.ServicesdetailsHeader__category, .ServicesdetailsHeader__date{
     color: var(--hashtag_color);
 }
 @media (max-width:950px) {
-    .JobDetails__container{
+    .ServicesDetails__container{
         flex-direction: column-reverse;
     }
-    .jobDetailsSide{
+    .ServicesDetailsSide{
         width: 100%;
         margin-left: 0;
         top: 80px;

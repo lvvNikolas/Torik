@@ -1,0 +1,126 @@
+.FreshAds{
+    width: 100%; 
+    padding-bottom: 100px;  
+}
+.FreshAds__container{
+   
+    align-items: flex-start;
+    min-height: 500px;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    overflow-x:none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.FreshAds__container::-webkit-scrollbar {
+    display: none;
+    
+}
+.FreshAds__horizontal-content{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.FreshAds__page-chunk{
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 25px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.FreshAds__page-chunk:first-of-type{
+    margin-left: 0;
+}
+.FreshAds__item{
+    min-height: 165px;
+    max-width: calc(33% - 12.5px);
+    width: 100%;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+    background: var(--card_bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+}
+.FreshAds__image{
+    height: 100%;
+    width: 150px;
+    object-fit: cover;
+}
+.FreshAds__item-data{
+    padding: var(--image_card_long_padding_mobile);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.FreshAds__item-data h2{
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.FreshAds__item-bottom{
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.FreshAds__item-link{
+    color: var(--link_color);
+}
+.FreshAds__paginator{
+    display: flex;
+    margin: 10px auto;
+    width: fit-content;
+}
+.FreshAds__paginator-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 5px;
+    min-width: 40px;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+.FreshAds__paginator-item:last-of-type{
+    margin-right: 0;
+}
+.FreshAds__paginator-indicator{
+    height: 10px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: var(--radius);
+}
+.FreshAds__paginator-indicator--active{
+    background: #000;
+}
+.FreshAds__paginator-percent{
+    opacity: 0;
+}
+.FreshAds__paginator-percent--active{
+    opacity: 1;
+}
+
+@media (max-width:950px) {
+    .FreshAds__item{
+        max-width: calc(50% - 12.5px);
+    }
+}
+
+@media (max-width:550px) {
+    .FreshAds__item{
+        max-width:  100%;
+    }
+    .FreshAds__paginator{
+        
+    }
+}

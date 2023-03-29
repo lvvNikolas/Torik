@@ -2,33 +2,33 @@ import { useParams } from "react-router-dom"
 import { placeHolderData } from "../../../firebase/firebase_exampe"
 import DetailsDescription from "../../../components/details/details_description"
 import DetailsSide from "../../../components/details/details_side"
-import JobDetailsHeader from "../../../components/jobs/jobs_details_header"
-import './job_details.css'
+import TrucksDetailsHeader from "../../../components/trucks/TrucksDetailsHeader"
+import './trucks_details.css'
 import DetailsBanner from "../../../components/details/details_banner"
 import { useEffect } from "react"
 
-const JobDetails = () =>{
+const TrucksDetails = () =>{
 
   
   //TODO Id динамический передается из роутера при клике на карточку
-    const {jobId} = useParams()
+    const {trucksId} = useParams()
     // TODO заменить данные из плейсхолдера на данные из store внутри redux
-    const jobArray =placeHolderData.JobPage.Jobs
+    const trucksArray =placeHolderData.TrucksPage.Trucks
    
-    //Находим в массиве работ, объект нужной (кликнутой работы)
-    const data = jobArray.find(el => el.Id === jobId)
+    //Находим в массиве траков, объект нужной (кликнутой работы)
+    const data = trucksArray.find(el => el.Id === trucksId)
     
     useEffect(()=>{
         window.scrollTo(0,0)
     },[])
     return (
-        <div className="JobDetails">
-            <div className="JobDetails__container">
-                <div className="JobDetails__content">
-                    <JobDetailsHeader data={data}/>
-                    <DetailsDescription description={data.JobDescription}/>
+        <div className="TrucksDetails">
+            <div className="TrucksDetails__container">
+                <div className="TrucksDetails__content">
+                    <TrucksDetailsHeader data={data}/>
+                    <DetailsDescription description={data.TrucksDescription}/>
                 </div>
-                <div className="jobDetailsSide">
+                <div className="TrucksDetailsSide">
                     <DetailsSide data={data}/>
                 </div>
             </div>
@@ -38,4 +38,4 @@ const JobDetails = () =>{
     )
 }
 
-export default JobDetails
+export default TrucksDetails
