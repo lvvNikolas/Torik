@@ -4,11 +4,7 @@ import  TrucksCard from '../../components/trucks/TrucksCard'
 import TrucksList from '../../components/trucks/TrucksList'
 import { publicRoutes } from '../../constants/routes'
 import { placeHolderData } from '../../firebase/firebase_exampe'
-<<<<<<< HEAD
 import TrucksDetails from '../details/trucks_details/trucks_details'
-=======
-import Home from '../home/home'
->>>>>>> 5e8663565e349918e3c0fbc0e1fdefe3ee7d154a
 import './trucks.css'
 
 const Trucks = () => {
@@ -23,12 +19,7 @@ const Trucks = () => {
         <button type='button' className='TrucksPage__back back__btn active_link' onClick={handleReturn}>Назад</button>
         <Routes>
             <Route index element = {<TrucksList/>}/>
-<<<<<<< HEAD
             <Route path=':trucksId' element = {<TrucksDetails/>}/>
-=======
-            //TODO заменить на details
-            <Route path=':trucksId' element = {<Home/>}/>
->>>>>>> 5e8663565e349918e3c0fbc0e1fdefe3ee7d154a
         </Routes>
     </div>
   )

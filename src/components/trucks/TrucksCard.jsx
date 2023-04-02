@@ -18,6 +18,7 @@ const TrucksCard = ({data}) => {
 
   const nav = useNavigate()
   const handleNavigate = () => {
+    console.log(`${publicRoutes.TRUCKS.route}/${Id}`)
     nav(`${publicRoutes.TRUCKS.route}/${Id}`)
   }
 

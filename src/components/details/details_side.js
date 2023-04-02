@@ -18,7 +18,7 @@ const DetailsSide = ({data}) =>{
             }
             <div className='detailsSide__social-container'>
                 {
-                    SocialLink.map((e,i)=><a className="detailsSide__social" href={e.link}>{e.type}</a>)
+                    SocialLink?.map((e,i)=><a className="detailsSide__social" href={e.link}>{e.type}</a>)
                 }
             </div>
         </div>

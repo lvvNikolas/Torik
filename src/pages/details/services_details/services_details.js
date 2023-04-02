@@ -16,6 +16,7 @@ const ServicesDetails = () =>{
     const servicesArray =placeHolderData.ServicesPage.Services
 
     const data = servicesArray.find(el => el.Id === servicesId)
+    console.log(data)
     
     useEffect(()=>{
         window.scrollTo(0,0)
