@@ -11,15 +11,21 @@ import NewJobs from './pages/newJobs/newJobs';
 import NavBar from './components/nav/nav_bar';
 import { publicRoutes } from './constants/routes';
 import AdsForm from './pages/ads_from/ads_form';
-// import AdsForm from './pages/ads_from/ads_form';
+<<<<<<< HEAD
+=======
+import { usePopup } from './components/popup/popup';
+import { useEffect } from 'react';
 
+>>>>>>> 5e8663565e349918e3c0fbc0e1fdefe3ee7d154a
+// import AdsForm from './pages/ads_from/ads_form';
+// TODO разобраться с ключами во всем эпп
 
 function App() {
 
   const {FORM,MAIN,JOBS,ESTATE,SERVICES,TRUCKS} = publicRoutes
 
   const location = useLocation()
-  
+
   return (
     <div className="App">
        <NavBar/>
@@ -30,6 +36,13 @@ function App() {
               <Route path={`${ESTATE.route}/*`}  element={<RealEstate/>}/>
               <Route path={`${SERVICES.route}/*`}  element={<Services/>}/>
               <Route path={`${TRUCKS.route}/*`}  element={<Trucks/>}/>
+<<<<<<< HEAD
+=======
+              {/* <Route path='freshAds' element={<FreshAds/>}/>
+              <Route path='topServices' element={<TopServices/>}/>
+              <Route path='newJobs' element={<NewJobs/>}/>
+              <Route path='topRealEstate' element={<TopRealEstate/>}/> */}
+>>>>>>> 5e8663565e349918e3c0fbc0e1fdefe3ee7d154a
               <Route path={FORM.route} element ={<AdsForm/>}/>
             </Routes>
             

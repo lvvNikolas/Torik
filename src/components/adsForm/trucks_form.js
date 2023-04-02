@@ -1,22 +1,27 @@
-import { Field, Formik } from "formik"
+import { Formik, Field } from "formik"
 import { useState } from "react"
+import { TRUCKS_CATEGORIES } from "../../constants/trucks"
 import Pricing from "./pricing"
 
-const TrucksForm = () =>{
+//TODO ADD PHOTO DRAG AND DROP FORM
+const TrucksForm = () => {
     const [extend, setExtend] = useState(false)
-    
+
     const initialValues = {
-        trucksTitle:'',
-        trucksDescription:'',
-        trucksCity:'',
-        trucksOwnerName:'',
-        trucksOwnerPhone:'',
-        trucksOwnerMail:'',
+        trucksCategory: TRUCKS_CATEGORIES[0].title,
+        trucksTitle: '',
+        trucksDescription: '',
+        trucksAdress: '',
+        trucksOwnerName: '',
+        trucksOwnerPhone: '',
+        trucksOwnerEmail: '',
+        trucksPrice: '',
+        trucksOwnerTg:'',
         trucksPlans:''
     }
 
     const formSubmit = values => {
-        // console.log(values)
+        console.log(values)
     }
 
     const handleExtend = () => {
@@ -30,24 +35,40 @@ const TrucksForm = () =>{
     const handleExtendStyle = () => {
         return extend ? "adsForm__extend-container" : "adsForm__extend-container adsForm__extend-container--close"
     }
-    
-    return(
-        <Formik initialValues={initialValues} onSubmit={formSubmit}>
-        {
-            ({ values, handleSubmit, handleChange }) => <form className="adsForm__form" onSubmit={handleSubmit}>
 
-<label className="adsForm-label" htmlFor="trucksTitleId">Название компании<span>*</span></label>
+    return (
+        <Formik initialValues={initialValues} onSubmit={formSubmit}>
+            {
+                ({ values, handleSubmit, handleChange }) => <form className="adsForm__form" onSubmit={handleSubmit}>
+
+                    <label className="adsForm-label" htmlFor="trucksCategoryId">Категория <span>*</span></label>
+                    <Field
+                        as='select'
+                        className={"adsForm_input"}
+                        id={'trucksCategoryId'}
+                        name="trucksCategory"
+                        onChange={handleChange}
+                        value={values.trucksCategory}>
+                        {
+                            TRUCKS_CATEGORIES.map((e, i) => <option
+                                key={i}
+                                value={e.id}
+                            >{e.title}</option>)
+                        }
+                    </Field>
+
+                    <label className="adsForm-label" htmlFor="trucksTitleId">Заголовок <span>*</span></label>
                     <Field
                         className={"adsForm_input"}
                         type={'text'}
                         id={'trucksTitleId'}
                         name={'trucksTitle'}
-                        placeholder="Горные Дьяволы Доставка грузов по всей стране"
+                        placeholder="Заголовок объявления"
                         onChange={handleChange}
                         value={values.trucksTitle}
                     />
 
-<label className="adsForm-label" htmlFor="trucksDescriptionId">Описание объявления<span>*</span></label>
+                    <label className="adsForm-label" htmlFor="trucksDescriptionId">Описание объявления<span>*</span></label>
                     <Field
                         as="textarea"
                         id={'trucksDescriptionId'}
@@ -55,77 +76,88 @@ const TrucksForm = () =>{
                         className={"adsForm_input"}
                         onChange={handleChange}
                         value={values.trucksDescription}
-                        placeholder="Мы предлагаем вам доставку грузов по всей стране. Мы работаем с 2000 года."
+                        placeholder="Просторный холл, уютная кухня"
                     />
-                    
-                    <label className="adsForm-label" htmlFor="trucksCityId">Адрес<span>*</span></label>
+
+                    <label className="adsForm-label" htmlFor="trucksAdressId">Адрес<span>*</span></label>
                     <Field
                         className={"adsForm_input"}
                         type={'text'}
-                        id={'trucksCityId'}
-                        name={'trucksCity'}
-                        placeholder="Лос-Анжелес, Оранж стрит 27"
+                        id={'trucksAdressId'}
+                        name={'trucksAdress'}
+                        placeholder="Лос-Анджелес, Оранж стрит 27"
                         onChange={handleChange}
-                        value={values.serviceCity}
+                        value={values.trucksAdress}
                     />
 
-<label className="adsForm-label" htmlFor="trucksOwnerNameId">Контактное лицо<span>*</span></label>
+                    <label className="adsForm-label" htmlFor="trucksOwnerNameId">Имя <span>*</span></label>
                     <Field
-                    type = {'text'}
+                        className={"adsForm_input"}
+                        type={'text'}
                         id={'trucksOwnerNameId'}
                         name={'trucksOwnerName'}
-                        className={"adsForm_input"}
+                        placeholder="Иван Петров"
                         onChange={handleChange}
                         value={values.trucksOwnerName}
-                        placeholder="Иванов Сергей"
                     />
-                    
-<label className="adsForm-label" htmlFor="trucksOwnerPhoneId">Телефон<span>*</span></label>
+
+                    <label className="adsForm-label" htmlFor="trucksOwnerPhoneId">Телефон для связи <span>*</span></label>
                     <Field
-                    type = {'phone'}
+                        className={"adsForm_input"}
+                        type={'text'}
                         id={'trucksOwnerPhoneId'}
                         name={'trucksOwnerPhone'}
-                        className={"adsForm_input"}
+                        placeholder="Иван Петров"
                         onChange={handleChange}
                         value={values.trucksOwnerPhone}
-                        placeholder="+19239123123"
                     />
 
-<label className="adsForm-label" htmlFor="trucksOwnerMailId">Почта<span>*</span></label>
+                    <label className="adsForm-label" htmlFor="trucksOwnerEmailId">Электронная почта <span>*</span></label>
                     <Field
-                    type = {'email'}
-                        id={'trucksOwnerMailId'}
-                        name={'trucksOwnerMail'}
                         className={"adsForm_input"}
+                        type={'text'}
+                        id={'trucksOwnerEmailId'}
+                        name={'trucksOwnerEmail'}
+                        placeholder="Иван Петров"
                         onChange={handleChange}
-                        value={values.trucksOwnerMail}
-                        placeholder="user@gmail.com"
+                        value={values.trucksOwnerEmail}
                     />
 
-                  {/* Доп форма */}
+                    <label className="adsForm-label" htmlFor="trucksPriceId">Цена услуги<span>*</span></label>
+                    <Field
+                        className={"adsForm_input"}
+                        type={'text'}
+                        id={'trucksPriceId'}
+                        name={'trucksPrice'}
+                        placeholder="3000$"
+                        onChange={handleChange}
+                        value={values.trucksPrice}
+                    />
+                   
+                    {/* Доп форма */}
                     <button type="button" onClick={handleExtend} className = {'adsForm__more-btn'}>
                         {handleExtendText()}
                     </button>
                     
                     <div className={handleExtendStyle()}>
-                    <label className="adsForm-label" htmlFor="rentOwnerTgId">Ccылка на телеграм<span>*</span></label>
+                    <label className="adsForm-label" htmlFor="trucksOwnerTgId">Ccылка на телеграм<span>*</span></label>
                     <Field
                         className={"adsForm_input"}
                         type={'text'}
-                        id={'rentOwnerTgId'}
-                        name={'rentOwnerTg'}
+                        id={'trucksOwnerTgId'}
+                        name={'trucksOwnerTg'}
                         placeholder="https://t.me/@link"
                         onChange={handleChange}
-                        value={values.rentOwnerTg}
+                        value={values.trucksOwnerTg}
                     />
                     </div>
 
-                    <Pricing adsType={"SERVICES"}/>
+                    <Pricing adsType={"TRUCKS"}/>
                     
                     <button type="submit" className="adsForm_submit active_btn">Отправить</button>
-            </form>
-        }
-    </Formik>
+                </form>
+            }
+        </Formik>
     )
 }
 

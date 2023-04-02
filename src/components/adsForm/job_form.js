@@ -3,12 +3,17 @@ import React, { useEffect, useRef, useState } from "react"
 import { JOB_CATEGORIES, JOB_REQUIREMENTS, JOB_TIME } from "../../constants/job"
 import { CITIES } from "../../constants/cities"
 import Pricing from "./pricing"
+import { createJobAdsObject } from "../../utils/helpers/ads_object_creators"
+import { setAdsToBacklog } from "../../utils/set_ads_to_firebase/setAdsToFirebase"
+import Popup from "../popup/popup"
+import { usePopup } from "../../hooks/usePopup"
 
 //TODO ADD PHOTO DRAG AND DROP FORM
  //TODO добавить инпуты для ввода линков на телегу ватсап (узнать какие популярные способы связи)
 const JobForm = () => {
     const [extend, setExtend] = useState(false)
     const ref = useRef(null)
+    const {showPopup} = usePopup()
 
     const initialValues = {
         jobCategory: JOB_CATEGORIES[0].id,
@@ -27,8 +32,18 @@ const JobForm = () => {
         jobPlan:''
     }
 
-    const formSubmit = (values) => {
-        // console.log(values)
+    //Cабминт формы
+    const formSubmit = async (values) => {
+        // Генерация id для объявления и для файрбейс
+        const adsId = 123
+        // TODO нужна валидация сейчас я данные напрямую пушу
+        const jobAdsObject = createJobAdsObject(adsId,values)
+        const {result, error} = await setAdsToBacklog(jobAdsObject)
+        if(error){
+            showPopup("Ошибка")
+        }else{
+            showPopup('Ваше объявление отправлено :)', 2000)
+        }
     }
 
     const handleExtend = () => {

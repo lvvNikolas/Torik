@@ -16,7 +16,8 @@ const RentForm = () => {
         rentOwnerPhone: '',
         renеOwnerEmail: '',
         rentPrice: '',
-        rentOwnerTg:''
+        rentOwnerTg:'',
+        rentPlans:''
     }
 
     const formSubmit = values => {
