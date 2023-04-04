@@ -104,8 +104,17 @@ export const placeHolderData = {
           OwnerName: "Виталик",
           Category:"Траки с CDL",
           CompanyName: "Dry Van",
-          PhoneNumber: "5623309823",
-          SocialLink: "[facebook],[instagram],[web]",
+          PhoneNumber: ["5623309823","5623309823"],
+          SocialLink: [
+            {
+              type:'INST',
+              link:'wa.me//'
+            },
+            {
+              type:'TG',
+              link:'t.me//'
+            }
+          ],
           City: "Los Angeles",
           AdsStatus: 'VIP',
           TrucksDescription: "Приглашаем водителей CDL, высокая оплата!",
@@ -122,8 +131,17 @@ export const placeHolderData = {
           OwnerName: "Виталик",
           Category:"Траки с CDL",
           CompanyName: "Dry Van",
-          PhoneNumber: "5623309823",
-          SocialLink: "[facebook],[instagram],[web]",
+          PhoneNumber: ["5623309823","5623309823"],
+          SocialLink: [
+            {
+              type:'INST',
+              link:'wa.me//'
+            },
+            {
+              type:'TG',
+              link:'t.me//'
+            }
+          ],
           City: "Los Angeles",
           AdsStatus: 'VIP',
           TrucksDescription: "Приглашаем водителей CDL, высокая оплата!",
@@ -140,8 +158,17 @@ export const placeHolderData = {
           OwnerName: "Виталик",
           Category:"Траки с CDL",
           CompanyName: "Dry Van",
-          PhoneNumber: "5623309823",
-          SocialLink: "[facebook],[instagram],[web]",
+          PhoneNumber: ["5623309823","5623309823"],
+          SocialLink: [
+            {
+              type:'INST',
+              link:'wa.me//'
+            },
+            {
+              type:'TG',
+              link:'t.me//'
+            }
+          ],
           City: "Los Angeles",
           AdsStatus: 'VIP',
           TrucksDescription: "Приглашаем водителей CDL, высокая оплата!",
@@ -163,8 +190,17 @@ export const placeHolderData = {
           OwnerName: "Виталик",
           Category:"Адвокаты",
           CompanyName: "STELLAR MORTGAGE",
-          PhoneNumber: "5623309823",
-          SocialLink: "[facebook],[instagram],[web]",
+          PhoneNumber: ["5623309823","5623309823"],
+          SocialLink: [
+            {
+              type:'INST',
+              link:'wa.me//'
+            },
+            {
+              type:'TG',
+              link:'t.me//'
+            }
+          ],
           City: "San-Diego",
           AdsStatus: 'VIP',
           ServicesDescription: "Неважно, покупаете ли вы, продаете, рефинансируете или строите дом своей мечты; важно работать с опытной и знающей командой.",
@@ -180,8 +216,17 @@ export const placeHolderData = {
           OwnerName: "Виталик",
           Category:"Адвокаты",
           CompanyName: "STELLAR MORTGAGE",
-          PhoneNumber: "5623309823",
-          SocialLink: "[facebook],[instagram],[web]",
+          PhoneNumber: ["5623309823","5623309823"],
+          SocialLink: [
+            {
+              type:'INST',
+              link:'wa.me//'
+            },
+            {
+              type:'TG',
+              link:'t.me//'
+            }
+          ],
           City: "San-Diego",
           AdsStatus: 'VIP',
           ServicesDescription: "Неважно, покупаете ли вы, продаете, рефинансируете или строите дом своей мечты; важно работать с опытной и знающей командой.",
@@ -198,7 +243,16 @@ export const placeHolderData = {
           Category:"Адвокаты",
           CompanyName: "STELLAR MORTGAGE",
           PhoneNumber: "5623309823",
-          SocialLink: "[facebook],[instagram],[web]",
+          SocialLink: [
+            {
+              type:'INST',
+              link:'wa.me//'
+            },
+            {
+              type:'TG',
+              link:'t.me//'
+            }
+          ],
           City: "San-Diego",
           AdsStatus: 'VIP',
           ServicesDescription: "Неважно, покупаете ли вы, продаете, рефинансируете или строите дом своей мечты; важно работать с опытной и знающей командой.",

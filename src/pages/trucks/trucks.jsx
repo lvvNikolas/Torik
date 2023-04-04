@@ -4,7 +4,7 @@ import  TrucksCard from '../../components/trucks/TrucksCard'
 import TrucksList from '../../components/trucks/TrucksList'
 import { publicRoutes } from '../../constants/routes'
 import { placeHolderData } from '../../firebase/firebase_exampe'
-import Home from '../home/home'
+import TrucksDetails from '../details/trucks_details/trucks_details'
 import './trucks.css'
 
 const Trucks = () => {
@@ -19,8 +19,7 @@ const Trucks = () => {
         <button type='button' className='TrucksPage__back back__btn active_link' onClick={handleReturn}>Назад</button>
         <Routes>
             <Route index element = {<TrucksList/>}/>
-            //TODO заменить на details
-            <Route path=':trucksId' element = {<Home/>}/>
+            <Route path=':trucksId' element = {<TrucksDetails/>}/>
         </Routes>
     </div>
   )
