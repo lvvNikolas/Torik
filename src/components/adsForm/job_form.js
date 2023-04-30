@@ -7,6 +7,8 @@ import { createJobAdsObject } from "../../utils/helpers/ads_object_creators"
 import { setAdsToBacklog } from "../../utils/set_ads_to_firebase/setAdsToFirebase"
 import Popup from "../popup/popup"
 import { usePopup } from "../../hooks/usePopup"
+import { PricingPlansJob } from "../../constants/pricing"
+import { validateEmail, validateTextInput } from "../../utils/validators/validators"
 
 //TODO ADD PHOTO DRAG AND DROP FORM
  //TODO добавить инпуты для ввода линков на телегу ватсап (узнать какие популярные способы связи)
@@ -29,11 +31,13 @@ const JobForm = () => {
         jobSalary: '',
         jobExtra: [],
         jobTime: '',
-        jobPlan:''
+        jobPlans:PricingPlansJob[1]
     }
 
+    
     //Cабминт формы
     const formSubmit = async (values) => {
+        console.log(values)
         // Генерация id для объявления и для файрбейс
         const adsId = 123
         // TODO нужна валидация сейчас я данные напрямую пушу
@@ -62,7 +66,7 @@ const JobForm = () => {
     return (
         <Formik initialValues={initialValues} onSubmit={formSubmit}>
             {
-                ({ values, handleSubmit, handleChange }) =>
+                ({ values, handleSubmit, handleChange, errors, touched }) =>
                     // Основная форма
 
                     <form className="adsForm__form" onSubmit={handleSubmit}>
@@ -91,8 +95,11 @@ const JobForm = () => {
                             placeholder="Заголовок объявления"
                             onChange={handleChange}
                             value={values.jobTitle}
+                            validate = {validateTextInput}
                         />
-
+                        {
+                            errors.jobTitle && touched.jobTitle && <div>{errors.jobTitle}</div>
+                        }
                         <label className="adsForm-label" htmlFor="jobLocId">Местоположение<span>*</span></label>
                         <Field
                             as="select"
@@ -138,6 +145,7 @@ const JobForm = () => {
                             className={"adsForm_input"}
                             onChange={handleChange}
                             value={values.jobOwnerEmail}
+                            validate = {validateEmail}
                         />
 
                         <label className="adsForm-label" htmlFor="  jobOwnerPhoneId">Контактный телефон<span>*</span></label>

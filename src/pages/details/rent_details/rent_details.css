@@ -13,6 +13,7 @@
 }
 .EstateDetailsSide{
     position: sticky;
+    height: fit-content;
     top: 100px;
     width: 350px;
     flex-shrink: 0;

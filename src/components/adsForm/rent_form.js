@@ -2,6 +2,7 @@ import { Formik, Field } from "formik"
 import { useState } from "react"
 import { RENT_CATEGORIES } from "../../constants/rent"
 import Pricing from "./pricing"
+import { PricingPlansRent } from "../../constants/pricing"
 
 //TODO ADD PHOTO DRAG AND DROP FORM
 const RentForm = () => {
@@ -14,14 +15,24 @@ const RentForm = () => {
         rentAdress: '',
         rentOwnerName: '',
         rentOwnerPhone: '',
-        renеOwnerEmail: '',
+        rentOwnerEmail: '',
         rentPrice: '',
         rentOwnerTg:'',
-        rentPlans:''
+        rentPlans:PricingPlansRent[1]
     }
 
     const formSubmit = values => {
-        // console.log(values)
+        console.log(values)
+        // Генерация id для объявления и для файрбейс
+        const adsId = 123
+        // TODO нужна валидация сейчас я данные напрямую пушу
+        // const rentAdsObject = createJobAdsObject(adsId,values)
+        // const {result, error} = await setAdsToBacklog(jobAdsObject)
+        // if(error){
+        //     showPopup("Ошибка")
+        // }else{
+        //     showPopup('Ваше объявление отправлено :)', 2000)
+        // }
     }
 
     const handleExtend = () => {
