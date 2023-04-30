@@ -1,0 +1,45 @@
+.cardPage__list {
+    flex-grow: 1;
+    flex-basis: 800px;
+    margin: 0 20px;
+}
+.cardPage__card{
+    background:#f9f9f9;
+    border-radius: var(--radius); 
+    margin-bottom: var(--card_text_margin_regular);
+    color: var(--main_font_color);
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+.cardPage__card::before{
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 150%;
+    top: -20%;
+    left: 0;
+    transform: rotate(25deg);
+    background: #ffffff;
+    animation: load 1s linear 0s infinite;
+}
+@keyframes load {
+    0%{
+        opacity: 0;
+        filter: blur(30px);
+        left: 0;
+    }
+    50%{
+        opacity: 1;
+        filter: blur(15px);
+        left: 50%;
+    }
+    100%{
+        opacity: 0;
+        filter: blur(30px);
+        left: 100%;
+    }
+}
