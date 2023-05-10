@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CITIES } from "../../constants/cities";
 import { RENT_CATEGORIES } from "../../constants/rent";
 import { placeHolderData } from "../../firebase/firebase_exampe";
@@ -13,9 +13,8 @@ const cities = CITIES;
 const rentCategories = RENT_CATEGORIES;
 
 const EstateList = ({ loading }) => {
-  console.log(loading);
   const data = useSelector((state) => state.rent);
-  const [filteredData, setFilteredData] = useState(data);
+  const [filteredData, setFilteredData] = useState([]);
 
   const [sorting, setSorting] = useState([
     {
@@ -27,6 +26,10 @@ const EstateList = ({ loading }) => {
       isActive: false,
     },
   ]);
+
+  useEffect(() => {
+    setFilteredData(data);
+  }, [data]);
 
   const [location, setLocation] = useState({
     id: cities[0].id,

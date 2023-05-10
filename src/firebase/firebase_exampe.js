@@ -290,7 +290,7 @@ export const placeHolderData = {
           "https://frankfurt.apollo.olxcdn.com/v1/files/3t11pzztv6kp2-KZ/image;s=644x461",
         ],
         OwnerName: "Виталик",
-        Category: "квартира",
+        Category: "FLAT",
         PhoneNumber: ["5623309823", "5623309823"],
         SocialLink: [
           {
@@ -302,7 +302,7 @@ export const placeHolderData = {
             link: "t.me//",
           },
         ],
-        City: "Los Angeles",
+        City: "LA",
         AdsStatus: "VIP",
         ShortEstateDescription: "short desc",
         EstateDescription: `
@@ -328,7 +328,7 @@ export const placeHolderData = {
         EstateTitle: "Двушка с клопами",
         EstatePhotos: [],
         OwnerName: "Виталик",
-        Category: "квартира",
+        Category: "FLAT",
         PhoneNumber: ["5623309823", "5623309823"],
         SocialLink: [
           {
@@ -340,7 +340,7 @@ export const placeHolderData = {
             link: "t.me//",
           },
         ],
-        City: "Los Angeles",
+        City: "LA",
         AdsStatus: "VIP",
         ShortEstateDescription: "short desc",
         EstateDescription: "<div>some <br>card description here<div>",
