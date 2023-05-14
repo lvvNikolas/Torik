@@ -10,3 +10,14 @@ export const getAllRJobsAds = async () => {
   const response = await getDocs(collection(firestore, "jobs"));
   return response.docs.map((item) => item.data());
 };
+
+export const getAllServicesAds = async () => {
+  const response = await getDocs(collection(firestore, "services"));
+  return response.docs.map((item) => item.data());
+};
+
+
+export const getAllTrucksAds = async () => {
+  const response = await getDocs(collection(firestore, "trucks"));
+  return response.docs.map((item) => item.data());
+};

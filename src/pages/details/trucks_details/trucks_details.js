@@ -6,6 +6,7 @@ import TrucksDetailsHeader from "../../../components/trucks/TrucksDetailsHeader"
 import './trucks_details.css'
 import DetailsBanner from "../../../components/details/details_banner"
 import { useEffect } from "react"
+import { useSelector } from "react-redux";
 
 const TrucksDetails = () =>{
 
@@ -13,7 +14,7 @@ const TrucksDetails = () =>{
   //TODO Id динамический передается из роутера при клике на карточку
     const {trucksId} = useParams()
     // TODO заменить данные из плейсхолдера на данные из store внутри redux
-    const trucksArray =placeHolderData.TrucksPage.Trucks
+    const trucksArray =useSelector((state) => state.trucks);
    
     //Находим в массиве траков, объект нужной (кликнутой работы)
     const data = trucksArray.find(el => el.Id === trucksId)
