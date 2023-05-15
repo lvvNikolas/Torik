@@ -30,9 +30,6 @@ function App() {
       <NavBar />
       <AuthContextProvider>
       <Routes>
-        <Route path='/Signup'  element={<Signup />}/>
-        <Route path='/'  element={<Signin />}/>
-        <Route path='/account'  element={<Account />}/>
         <Route path={MAIN.route} element={<Home />} />
         <Route path={`${JOBS.route}/*`} element={<Jobs />} />
         <Route path={`${ESTATE.route}/*`} element={<RealEstate />} />
@@ -43,6 +40,9 @@ function App() {
               <Route path='newJobs' element={<NewJobs/>}/>
               <Route path='topRealEstate' element={<TopRealEstate/>}/> */}
         <Route path={FORM.route} element={<AdsForm />} />
+        <Route path='/Signup'  element={<Signup />}/>
+        <Route path='/Signin'  element={<Signin />}/>
+        <Route path='/account'  element={<Account />}/>
       </Routes>
       </AuthContextProvider>
     </div>
