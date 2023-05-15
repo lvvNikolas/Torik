@@ -13,6 +13,10 @@ import { publicRoutes } from "./constants/routes";
 import AdsForm from "./pages/ads_from/ads_form";
 import { idGenerator } from "./utils/idgenerator/generator";
 import { setAdsToCollection } from "./utils/set_ads_to_firebase/setAdsToFirebase";
+import Signup from "./components/account/Signup";
+import Signin from "./components/account/Sigin";
+import Account from "./components/account/Account";
+import { AuthContextProvider } from "./context/AuthContext";
 // import AdsForm from './pages/ads_from/ads_form';
 // TODO разобраться с ключами во всем эпп
 
@@ -24,8 +28,11 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
+      <AuthContextProvider>
       <Routes>
+        <Route path='/Signup'  element={<Signup />}/>
+        <Route path='/'  element={<Signin />}/>
+        <Route path='/account'  element={<Account />}/>
         <Route path={MAIN.route} element={<Home />} />
         <Route path={`${JOBS.route}/*`} element={<Jobs />} />
         <Route path={`${ESTATE.route}/*`} element={<RealEstate />} />
@@ -37,6 +44,7 @@ function App() {
               <Route path='topRealEstate' element={<TopRealEstate/>}/> */}
         <Route path={FORM.route} element={<AdsForm />} />
       </Routes>
+      </AuthContextProvider>
     </div>
   );
 }
