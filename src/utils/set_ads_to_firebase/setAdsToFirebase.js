@@ -6,32 +6,32 @@ import { firestore } from "../../firebase/firebase_config";
 export const setAdsToBacklog = async (data) => {
   try {
     //ссылка на коллекцию в базе
-    const ref = collection(firestore, "backlog");
-    const result = await addDoc(ref, data);
+    const ref = doc(firestore, "backlog", `${data.id}`);
+    const result = await setDoc(ref, data);
     return {
       result: result,
-      error: false,
+      error: null,
     };
   } catch (error) {
     return {
       result: null,
-      error: true,
+      error: error,
     };
   }
 };
 
 export const setAdsToCollection = async (collectionName, data) => {
   try {
-    const ref = collection(firestore, collectionName);
-    const result = await addDoc(ref, data);
+    const ref = doc(firestore, collectionName, `${data.id}`);
+    const result = await setDoc(ref, data);
     return {
-      result: null,
-      error: true,
+      result: result,
+      error: null,
     };
   } catch (error) {
     return {
       result: null,
-      error: true,
+      error: error,
     };
   }
 };

@@ -105,6 +105,10 @@
     border-radius: 10px;
     border: 1px solid var(--border_color);
     background: var(--input_bg);
+    resize: none;
+}
+#descriptionId{
+    height: 150px !important;
 }
 .adsForm_input:focus{
     border: 1px solid var(--active_color);

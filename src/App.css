@@ -22,11 +22,34 @@ html{
     display: flex;
     flex-direction: column;
 }
-
+.btn-loader{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.btn-loader::before{
+  content: ".";
+  color:#fff;
+  animation: dots-loading  0.5s linear 0s infinite;
+}
 @media (max-width:480px) {
     html{
         font-size: 16px;
     }
+}
+
+@keyframes dots-loading {
+  0%{
+    content: ".";
+  }
+  50%{
+    content: "...";
+  }
+  100%{
+    content: ".....";
+  }
 }
 
 /* АНИМАЦИЯ ПЕРЕХОДА ПО СТРАНИЦАМ ТЕСT*/
