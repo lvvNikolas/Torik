@@ -16,7 +16,23 @@ import {
   validateTextInput,
 } from "../../utils/validators/validators";
 import Pricing from "../adsForm/pricing";
+import { RENT_CATEGORIES } from "../../constants/rent";
+import { TRUCKS_CATEGORIES } from "../../constants/trucks";
+import { SERVICES_CATEGORIES } from "../../constants/services";
 
+const handleCategories = (type) => {
+  if (type === "JOB") {
+    return JOB_CATEGORIES;
+  } else if (type === "RENT") {
+    return RENT_CATEGORIES;
+  } else if (type === "TRUCKS") {
+    return TRUCKS_CATEGORIES;
+  } else if (type === "SERVICES") {
+    return SERVICES_CATEGORIES;
+  }
+};
+
+// TODO добавить инпут для ссылок на соц-цети
 // Универсальная форма. Принимает тип(работа,траки... и тд),
 // значения текстов для инпутов,
 // начальные значения для формы,
@@ -71,7 +87,7 @@ const Form = ({ type, inputsTexts, initialValues }) => {
         // Основная форма
 
         <form className="adsForm__form" onSubmit={handleSubmit}>
-          {renderForm(initialValues, inputsTexts, handleChange, values)}
+          {renderForm(initialValues, inputsTexts, handleChange, values, type)}
 
           <Pricing adsType={type} />
 
@@ -91,21 +107,30 @@ export default Form;
 
 //Универсальный рендер формы на основе значений из formik initialValues
 //type - тип формы по умолчанию для юзера (скрывает системные инпуты)
-const renderForm = (object, inputsTexts, handleChange, values) => {
-  console.log(inputsTexts);
+const renderForm = (object, inputsTexts, handleChange, values, type) => {
   return Object.keys(object).map((key, i) => (
     <>
-      <label className="adsForm-label" htmlFor={`${key}Id`}>
-        {inputsTexts[key].name}
-        <span>*</span>
-      </label>
-      {handleField(key, handleChange, values, inputsTexts[key].placeholder)}
+      {key !== "plans"}
+      {
+        <label className="adsForm-label" htmlFor={`${key}Id`}>
+          {inputsTexts[key].name}
+          <span>*</span>
+        </label>
+      }
+
+      {handleField(
+        key,
+        handleChange,
+        values,
+        inputsTexts[key].placeholder,
+        type
+      )}
     </>
   ));
 };
 
 //Конструктор полей на основе формы
-const handleField = (key, handleChange, values, placeholder) => {
+const handleField = (key, handleChange, values, placeholder, type) => {
   if (key === "category") {
     return (
       <Field
@@ -116,7 +141,7 @@ const handleField = (key, handleChange, values, placeholder) => {
         onChange={handleChange}
         value={values.category}
       >
-        {JOB_CATEGORIES.map((e, i) => (
+        {handleCategories(type).map((e, i) => (
           <option key={i} value={e.id}>
             {e.title}
           </option>
@@ -183,6 +208,32 @@ const handleField = (key, handleChange, values, placeholder) => {
     );
   } else if (key === "plans") {
     return null;
+  } else if (key === "poster") {
+    return (
+      <Field
+        as="input"
+        className={"adsForm_input"}
+        id={`${key}Id`}
+        name={key}
+        onChange={handleChange}
+        type="file"
+        value={values[key]}
+      />
+    );
+    // TODO сделать валидацию на размер файлов и кол-во
+  } else if (key === "photos") {
+    return (
+      <Field
+        as="input"
+        className={"adsForm_input"}
+        id={`${key}Id`}
+        name={key}
+        onChange={handleChange}
+        type="file"
+        value={values[key]}
+        multiple
+      />
+    );
   } else {
     return (
       <Field

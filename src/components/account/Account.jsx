@@ -16,6 +16,7 @@ const inputTexts = {
   JOBS: jobsAdminInputsTexts,
 };
 
+//TODO добавить остальные коллекции. id Должно совпадать с type из объекта объявлений
 const collectionsData = [
   {
     id: "BACKLOG",
