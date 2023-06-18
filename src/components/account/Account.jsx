@@ -7,6 +7,9 @@ import {
   jobsAdminInputsTexts,
 } from "../forms/data/job-form-data";
 import AdminForm from "../forms/admin-form";
+import { usePopup } from "../../hooks/usePopup";
+import { deleteDoc, doc } from "firebase/firestore";
+import { firestore } from "../../firebase/firebase_config";
 
 const initialValues = (data) => ({
   JOBS: jobsAdminInitialValues(data),
@@ -40,6 +43,8 @@ const Account = () => {
   const [currentAdsIndex, setCurrentAdsIndex] = useState(0);
   const [currentAdsType, setCurrentAdsType] = useState("");
   const [collections, setCollections] = useState(collectionsData);
+
+  const { showPopup } = usePopup();
 
   const getAdsById = () => ({
     object: (data.length > 0 && data[currentAdsIndex]) || {},
@@ -154,6 +159,23 @@ const Account = () => {
                 <h2>
                   Объявление от {new Date(ads?.startTime).toLocaleDateString(0)}
                 </h2>
+                <p
+                  style={{
+                    padding: "20px",
+                    background: "#f8f8f8",
+                    borderRadius: "10px",
+                  }}
+                  onClick={async () => {
+                    try {
+                      await deleteDoc(doc(firestore, "backlog", `${ads.id}`));
+                      setIsRefresh(true);
+                    } catch (error) {
+                      showPopup(error);
+                    }
+                  }}
+                >
+                  Удалить объявление
+                </p>
                 <div>
                   <h3>Категория объявления</h3>
                   <p>{ads?.type}</p>
