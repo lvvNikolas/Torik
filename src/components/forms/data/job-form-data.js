@@ -27,6 +27,7 @@ export const jobsInputsTexts = {
   extra: { name: "Дополнительно" },
   employment: { name: "Занятость" },
   plans: { name: "Планы", isAdmin: true },
+  tg: { name: "Ссылка на телеграм", placeholder: "t.me/@your-telegram-name" },
   //   bannerId: { name: "Айди баннера(системная)", isAdmin: true },
   //   priority: { name: "Приоритет(системная)", isAdmin: true },
   //   keywords: { name: "Ключевые слова(системная)", isAdmin: true },
@@ -50,6 +51,7 @@ export const jobsInitialValues = {
   extra: [],
   employment: "",
   plans: PricingPlansJob[1].id,
+  tg: "",
 };
 
 export const jobsAdminInitialValues = (data) => ({
@@ -74,6 +76,8 @@ export const jobsAdminInitialValues = (data) => ({
   endTime: data.endTime,
   startTime: data.startTime,
   userId: data.userId,
+  tg: data.tg,
+  geo: "USA",
 });
 
 export const jobsAdminInputsTexts = {
@@ -104,4 +108,6 @@ export const jobsAdminInputsTexts = {
   userId: { name: "Айди юзера(системная)" },
   endTime: { name: "Дата окончания премиума(системная)" },
   startTime: { name: "Дата начала премиума(системная)" },
+  tg: { name: "Ссылка на телеграм" },
+  geo: { name: "Cтрана" },
 };

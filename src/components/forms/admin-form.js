@@ -20,8 +20,15 @@ import {
 } from "../../utils/validators/validators";
 import { CITIES } from "../../constants/cities";
 import Pricing from "../adsForm/pricing";
+import { deleteDoc, doc } from "firebase/firestore";
+import { firestore } from "../../firebase/firebase_config";
 
-const AdminForm = ({ initialValues, inputTexts, collectionName }) => {
+const AdminForm = ({
+  initialValues,
+  inputTexts,
+  collectionName,
+  setIsRefresh,
+}) => {
   const [extend, setExtend] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const ref = useRef(null);
@@ -33,15 +40,17 @@ const AdminForm = ({ initialValues, inputTexts, collectionName }) => {
       ...values,
       userId: values.ownerEmail,
     };
+    const id = data.id;
     //Добавляем в файрбейс
     setIsSending(true);
-
     const { result, error } = await setAdsToCollection(collectionName, data);
     if (error) {
       console.log(error);
       showPopup("Ошибка");
     } else {
+      await deleteDoc(doc(firestore, "backlog", `${id}`));
       showPopup("Ваше объявление отправлено :)", 2000);
+      setIsRefresh(true);
     }
     setIsSending(false);
   };

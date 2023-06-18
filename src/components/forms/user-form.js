@@ -110,13 +110,12 @@ export default Form;
 const renderForm = (object, inputsTexts, handleChange, values, type) => {
   return Object.keys(object).map((key, i) => (
     <>
-      {key !== "plans"}
-      {
+      {key !== "plans" && (
         <label className="adsForm-label" htmlFor={`${key}Id`}>
           {inputsTexts[key].name}
           <span>*</span>
         </label>
-      }
+      )}
 
       {handleField(
         key,
@@ -232,6 +231,19 @@ const handleField = (key, handleChange, values, placeholder, type) => {
         type="file"
         value={values[key]}
         multiple
+      />
+    );
+  } else if (key === "tg") {
+    return (
+      <Field
+        as="input"
+        className={"adsForm_input"}
+        id={`${key}Id`}
+        name={key}
+        onChange={handleChange}
+        type="input"
+        value={values[key]}
+        placeholder={placeholder || null}
       />
     );
   } else {

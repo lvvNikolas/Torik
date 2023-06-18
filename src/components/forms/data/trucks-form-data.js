@@ -21,8 +21,8 @@ export const trucksInputsTexts = {
   companyName: { name: "Название компании", placeholder: "Тракс энд деливери" },
   price: { name: "Стоимость услуги", placeholder: "500" },
   extra: { name: "Дополнительно" },
-  social: { name: "Ссылки на соц сети" },
   plans: { name: "Планы" },
+  tg: { name: "Ссылка на телеграм", placeholder: "t.me/@your-telegram-name" },
 };
 
 // Поля для формы юзера
@@ -39,8 +39,8 @@ export const trucksInitialValues = {
   price: "",
   extra: [],
   plans: PricingPlansJob[1].id,
-  social: "",
   photos: "",
+  tg: "",
 };
 
 export const trucksAdminInitialValues = (data) => ({
@@ -64,8 +64,9 @@ export const trucksAdminInitialValues = (data) => ({
   endTime: data.endTime,
   startTime: data.startTime,
   userId: data.userId,
-  social: data.social,
   photos: data.photos,
+  tg: data.tg,
+  geo: "USA",
 });
 
 export const trucksAdminInputsTexts = {
@@ -96,4 +97,6 @@ export const trucksAdminInputsTexts = {
   endTime: { name: "Дата окончания премиума(системная)" },
   startTime: { name: "Дата начала премиума(системная)" },
   photos: { name: "Фото" },
+  tg: { name: "Ссылка на телеграм", placeholder: "t.me/@your-telegram-name" },
+  geo: { name: "Cтрана" },
 };
